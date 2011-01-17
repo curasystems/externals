@@ -1,0 +1,72 @@
+<p>Combined emphasis:</p>
+
+<ol>
+<li><strong><em>test test</em></strong></li>
+<li><strong><em>test test</em></strong></li>
+<li><em>test <strong>test</em></strong></li>
+<li><strong>test <em>test</em></strong></li>
+<li><strong><em>test</em> test</strong></li>
+<li><strong><em>test</strong> test</em></li>
+<li><strong><em>test</em> test</strong></li>
+<li><strong>test <em>test</em></strong></li>
+<li><em>test <strong>test</em></strong></li>
+<li><em>test <strong>test</em></strong></li>
+<li><strong>test <em>test</em></strong></li>
+<li><strong><em>test</em> test</strong></li>
+<li><strong><em>test</strong> test</em></li>
+<li><strong><em>test</em> test</strong></li>
+<li><strong>test <em>test</em></strong></li>
+<li><em>test <strong>test</em></strong></li>
+</ol>
+
+<p>Incorrect nesting:</p>
+
+<ol>
+<li><em>test  <strong>test</em>  test</strong></li>
+<li><em>test  <strong>test</em>  test</strong></li>
+<li><strong>test  <em>test</strong> test</em></li>
+<li><strong>test  <em>test</strong> test</em></li>
+<li><em>test   *test</em>  test*</li>
+<li><em>test   _test</em>  test_</li>
+<li><strong>test <em>*test</strong> test</em>*</li>
+<li><strong>test <em>_test</strong> test</em>_</li>
+</ol>
+
+<p>No emphasis:</p>
+
+<ol>
+<li>test*  test  *test</li>
+<li>test<em>* test *</em>test</li>
+<li>test_  test  _test</li>
+<li>test<em>_ test _</em>test</li>
+</ol>
+
+<p>Middle-word emphasis (asterisks):</p>
+
+<ol>
+<li><em>a</em>b</li>
+<li>a<em>b</em></li>
+<li>a<em>b</em>c</li>
+<li><strong>a</strong>b</li>
+<li>a<strong>b</strong></li>
+<li>a<strong>b</strong>c</li>
+</ol>
+
+<p>Middle-word emphasis (underscore):</p>
+
+<ol>
+<li><em>a</em>b</li>
+<li>a<em>b</em></li>
+<li>a<em>b</em>c</li>
+<li><strong>a</strong>b</li>
+<li>a<strong>b</strong></li>
+<li>a<strong>b</strong>c</li>
+</ol>
+
+<p>my<em>precious</em>file.txt</p>
+
+<h2>Tricky Cases</h2>
+
+<p>E<strong>. **Test</strong> TestTestTest</p>
+
+<p>E<strong>. **Test</strong> Test Test Test</p>
