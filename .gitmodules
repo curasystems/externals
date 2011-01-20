@@ -1,0 +1,24 @@
+[submodule "apps/mongodb"]
+	path = apps/mongodb
+	url = https://github.com/mongodb/mongo.git
+[submodule "apps/elasticsearch"]
+	path = apps/elasticsearch
+	url = https://github.com/elasticsearch/elasticsearch.git
+[submodule "libs/zeromq2"]
+	path = libs/zeromq2
+	url = https://github.com/zeromq/zeromq2.git
+[submodule "libs/zeromq2-clrzmq2"]
+	path = libs/zeromq2-clrzmq2
+	url = https://github.com/zeromq/clrzmq2.git
+[submodule "libs/servicestack.text"]
+	path = libs/servicestack.text
+	url = https://github.com/mythz/ServiceStack.Text.git
+[submodule "templates/html5-boilerplate"]
+	path = templates/html5-boilerplate
+	url = https://github.com/paulirish/html5-boilerplate.git
+[submodule "libs/automapper"]
+	path = libs/automapper
+	url = https://github.com/jbogard/AutoMapper.git
+[submodule "apps/mongodb-csharp-driver"]
+	path = apps/mongodb-csharp-driver
+	url = https://github.com/mongodb/mongo-csharp-driver.git
