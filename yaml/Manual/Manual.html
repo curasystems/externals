@@ -1,0 +1,705 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Yaml Library for .NET</title>
+	<style type="text/css">
+	/* <![CDATA[[ */
+		pre {
+			margin-left:      4em;
+			background-color: #eeeeff;
+			border:           1px solid #ddddff;
+			color:            #000000 }
+		kbd {
+			background-color: #eeeeff;
+			border:           1px solid #ddddff;
+			color:            #000000 }
+
+		h2 {
+			border-bottom:    10px solid #aaaaaa; }
+			
+		#valid {
+			float:            right; 
+			border:           2px solid #aaaaaa; }
+
+		/* TODO ... */	
+
+	/* ]]> */
+	</style>
+</head>
+<body>
+	<h1>Yaml Library for .NET</h1>
+<!-- This must not be included when integrated with NDoc
+	<p id="valid">
+		<a href="http://validator.w3.org/check?uri=referer">Valid XHTML 1.1</a><br/>
+		<a href="http://jigsaw.w3.org/css-validator/validator?profile=css2&amp;warning=2&amp;uri=http%3A%2F%2Flumumba.uhasselt.be%2F~christophe%2FYAML%2Findex.html">Valid CSS</a>
+	</p>
+-->
+
+	<dl>
+		<dt>Date</dt>
+			<dd>2006-06-03</dd>
+		<dt>Authors</dt>
+			<dd>
+			  <a href="mailto:christophe.lambrechts@student.uhasselt.be"
+				  title="christophe.lambrechts@gmail.com">Christophe Lambrechts</a>, 
+			  <a href="mailto:jonathan.slenders@student.uhasselt.be"
+				  title="jonathan.slenders@student.uhasselt.be">Jonathan Slenders</a></dd>
+		<dt>Content</dt>
+			<dd><ul>
+				<li><a href="#intro" title="Some basic information">Introduction</a></li>
+				<li><a href="#lic" title="What you are permitted to do">License</a></li>
+				<li><a href="#support" title="What you can use">Currently supported</a></li>
+				<li><a href="#getit" title="How to get it">Get the source</a></li>
+				<li><a href="#compile" title="How to compile">Compiling this library</a>
+					<ul>
+						<li><a href="#prepro" title="What you can use">
+							Preprocessor definition</a></li>
+						<li><a href="#integrate" title="How you can use it">
+							Integration in other projects</a></li>
+					</ul>
+				</li>
+				<li><a href="#example" title="Some useful examples">Code examples</a>
+					<ul>
+						<li><a href="#readfile" title="Reading file">
+							Reading YAML from a file</a></li>
+						<li><a href="#readstring" title="Reading string">
+							Reading YAML from a string</a></li>
+						<li><a href="#writefile" title="Writing file">
+							Writing YAML to a file</a></li>
+						<li><a href="#writestring" title="Writing string">
+							Writing YAML to a string</a></li>
+						<li><a href="#createtree" title="Make a tree">
+							Creating a YAML tree</a></li>
+						<li><a href="#traversetree" title="Use parsed data">
+							Traversing a YAML tree</a></li>
+					</ul>
+				</li>
+				<li><a href="#algo" title="How we did it">Description of our algorithms</a>
+					<ul>
+						<li><a href="#levels" title="Levels">
+							Levels in our parser</a></li>
+						<li><a href="#determinenode" title="Node">
+							Determining the type of node</a></li>
+						<li><a href="#parsesequence" title="Sequence">
+							Parsing of Sequences</a></li>
+						<li><a href="#parsemap" title="Mappings">
+							Parsing of Mappings</a></li>
+						<li><a href="#parsescalar" title="Scalars">
+							Parsing of the scalars</a></li>
+					</ul>
+				</li>
+				<li><a href="#doc" title="Code documentation">Documentation</a></li>
+				<li><a href="#vision" title="What we think">Our vision about YAML and its applications</a></li>
+				<li><a href="#credits" title="Who we will thank">Credits</a></li>
+			</ul></dd>
+			
+	</dl>
+
+
+	<h2 id="intro">Introduction</h2>
+	<p>
+		Dear Yaml fans,
+	</p>
+	<p>
+		We are two computer science students from the
+		<a href="http://www.uhasselt.be" title="University site">
+		University of Hasselt</a>. In our second Bachelor year we
+		had to implement a .NET <a href="http://www.yaml.org/"
+		title="Homepage of the Yaml project">Yaml</a> parser as a
+		project. The requirements of the project were to implement
+		it in C# and release it as Open Source. Further we took
+		also the challenge to make it a one pass parser.
+	</p>
+	<p>
+		We will follow the project, but due of our busy student life
+		we can't say at the moment that we will have time to do a
+		lot of coding.
+	</p>
+	<p>
+		We hope you enjoy our work and it is useful.
+	</p>
+	
+	<h2 id="lic">License</h2>
+	<p>
+		We released our software as an OpenSource project. This is one
+		of the project requirements and also has our full support.
+		We used the GNU General Public License that can be found in <kbd>COPYING</kbd>
+		file placed in the <kbd>Code</kbd> directory. More information
+		can be found on 
+		<a href="http://www.gnu.org/" title="GNU General Public License">
+		http://www.gnu.org/</a>.
+	</p>
+
+	<h2 id="support">Currently supported</h2>
+
+	<p>
+		Yaml is a very extensive markup/serialisation language.
+		There are a lot of parsers available over the net, and not
+		all of them support all possible structures defined in the
+		official documentation. We had very few time while developing
+		this parser and so we were far from able to complete
+		everything. We also didn't aim to complete everything because
+		there are discussions going on about simplifying the Yaml
+		language definition and moving to JSON compatibility.
+		We stayed close to the core without going too
+		much in detail. As a result of using an object oriented
+		language, our parser is very well structured and easy to
+		extend.
+	</p>
+	<p>
+		This is a list of the currently supported features.
+	</p>
+	<ul>
+		<li>Sequences</li>
+		<li>Explicit mappings</li>
+		<li>Implicit mappings (without leading colon) (still unstable)</li>
+		<li>Inline mappings and sequences</li>
+		<li>Nesting of all kind of supported structures except
+			some nestings inside inline mappings or sequences</li>
+	</ul>
+	<ul>
+		<li>Strings</li>
+		<li>Folded and block scalars (but no + and - chomps)</li>
+		<li>Booleans</li>
+		<li>Null values</li>
+		<li>Integers</li>
+		<li>Floats</li>
+		<li>Timestamps</li>
+		<li>Binary</li>
+	</ul>
+	<p>
+		This has yet to come.
+	</p>
+	<ul>
+		<li>Multiple Yaml documents in a single file</li>
+		<li>Anchors and references</li>
+		<li>Indexers for mappings. But in a way it can be used just like
+				a hashtable</li>
+		<li>Some bug fixes</li>
+		<li>...</li>
+	</ul>
+	
+	<h2 id="getit">Get the source</h2>
+	
+	<p>
+		We use CVS to manage our code. You can check out with an anonymous account at this place:
+		<kbd>:pserver:anonymous@lumumba.uhasselt.be:/home/christophe/Pro2 
+		in the <q>yaml</q> repository</kbd>.
+		At this time there are some junk files like our analyse and end report for the 
+		educational team (this is in dutch).
+		Some files of interest are the Linux/Unix Makefile and the Visual Studio project files.
+		Jonathan is a Linux developer/user and Christophe likes Windows. This is the reason that
+		our library works fine on the two platforms.
+	</p>
+
+	<h2 id="compile">Compiling this library</h2>
+
+		<h3 id="prepro">Preprocessor definition</h3>
+		<p>
+			We use preprocessor defines for easily enabling
+			or disabling support for certain datatypes.
+		</p>
+		<dl>
+			<dt>General</dt>
+			<dd><ul>
+				<li>UNSTABLE (Also enable unstable code, more features)</li>
+			</ul></dd>
+			<dt>Node.cs</dt>
+			<dd><ul>
+				<li>SUPORT_EXPLICIT_TYPE</li>
+				<li>SUPPORT_IMPLICIT_MAPPINGS (requires UNSTABLE)</li>
+			</ul></dd>
+			<dt>Scalar.cs</dt>
+			<dd><ul>
+				<li>SUPPORT_NULL_NODES</li>
+				<li>SUPPORT_INTEGER_NODES</li>
+				<li>SUPPORT_FLOAT_NODES</li>
+				<li>SUPPORT_BOOLEAN_NODES</li>
+				<li>SUPPORT_BINARY_NODES</li>
+				<li>SUPPORT_TIMESTAMP_NODES</li>
+			</ul></dd>
+		</dl>
+		<p>
+			The precompiled DLL has everything enabled. Possibly in the future there
+			comes a feature to enable/disable this at runtime. 
+		</p>
+		<p>
+			This library can be compiled with the Microsoft C# .NET
+			compiler and with Mono. We've choosen to use only the .NET 1.0 and not
+			the new 2.0 version. This for extra compatibility with 
+			<a href="http://www.mono-project.com/" title="Homepage of the Mono project">Mono</a>.
+		</p>
+
+		<h3 id="integrate">Integration in other projects</h3>
+		
+		<p>
+			There are two options. You can put all the code in your project or use our library as 
+			a DLL. You can find a debug and a release version in the folder <kbd>Code/bin/</kbd>.
+		</p>
+		<p>
+			Our project is also signed with a public key. You can found it in the same
+			directory as the source code. We hope this will help for further development.
+		</p>
+
+	<h2 id="example">Code examples</h2>
+
+		<p>
+			You'll have to import the YAML namespace in order to
+			use this classes. We leave it behind in the the following
+			code examples.
+		</p>
+		
+<pre class="cs">
+using Yaml;
+</pre>
+		
+		<p>
+			If you are using Visual Studio, then you also need to
+			refer to the folder where the Yaml DLL is placed.
+			In the provided examples is referred to the Debug DLL found in
+			<kbd>Code/bin/Debug/</kbd>.
+		</p>
+		
+		<p>
+		Note: all this code examples and more can be found in the <kbd>Examples</kbd>
+		folder.
+		</p>
+		
+		<h3 id="readfile">Reading YAML from a file</h3>
+		
+<pre class="cs">
+Node node = Node.FromFile ("testRead.yaml");
+Console.WriteLine (node);
+</pre>
+		<p>
+			Note: 'Node.ToString ()' does not return YAML code.
+			Use 'Node.Write ()' instead.
+		</p>
+
+		<h3 id="readstring">Reading YAML from a string</h3>
+<pre class="cs">
+Node node = Node.Parse ("- item1\n- item2\n");
+Console.WriteLine (node);
+</pre>
+
+		<p>The output looks like this:</p>
+<pre class="output">
+[SEQUENCE][STRING]item1[/STRING][STRING]item2[/STRING][/SEQUENCE]
+</pre>
+		<h3 id="writefile">Writing YAML to a file</h3>
+
+<pre class="cs">
+Node node = Node.Parse ("- item1\n- item2\n");
+node.ToFile ("testWrite.yaml");
+</pre>
+		<h3 id="writestring">Writing YAML to a string</h3>
+
+<pre class="cs">
+Node node = Node.Parse ("- item1\n- item2\n");
+string s = node.Write ();
+Console.WriteLine( s );
+</pre>
+		<p>The output looks like:</p>
+<pre class="output">
+- "item1"
+- "item2"
+</pre>
+		<h3 id="createtree">Creating a YAML tree</h3>
+<pre class="cs">
+Sequence sequence = new Sequence (
+
+	new Node []
+	{
+		new Yaml.String ("item 1"),
+		new Yaml.String ("item 2"),
+		new Yaml.String ("item 3"),
+
+		new Mapping (
+			new MappingNode []
+			{
+				new MappingNode (new Yaml.String ("key 2"), new Yaml.String ("value 1")),
+				new MappingNode (new Yaml.String ("key 2"), new Yaml.String ("value 2"))
+			} ),
+
+		new Yaml.String ("item 5")
+	} );
+
+Console.WriteLine (sequence);
+</pre>
+<p>The output:</p>
+		<p>
+			Node, Sequence, Mapping, MappingNode and String are all
+			members of the Yaml namespace. We recommand using
+			Yaml.Node, ... Yaml.String to avoid conflicts with other
+			namespaces.<br/>
+			If you are using the System namespace at the sametime, 
+			then there is a name collision with String. Use Yaml.String to 
+			solve this.
+		</p>
+
+		<h3 id="traversetree">Browse a YAML tree</h3>
+<pre class="cs">
+foreach (Node s in sequence.Nodes)
+{
+	if (s.Type == NodeType.String)
+		Console.Write ("Found a string: " + ((String) s).Content + "\n");
+}
+</pre>
+<pre class="output">
+Found a string: item 1
+Found a string: item 2
+Found a string: item 3
+Found a string: item 5
+</pre>
+
+	<h2 id="algo">Description of our algorithms</h2>
+
+	<p>
+		We didn't copy any algorithm from an existing parser. The main
+		reason for doing so is because the Syck parser is written in C while 
+		we took a more object oriented approach. Other reasons include
+		that not all the available parsers give the same parse result.
+		Also, because it was a school project and we had to learn from
+		this project, it had no sense to simply translate an existing
+		parser to C#.
+	</p>
+
+	<h3 id="levels">Levels in our parser</h3>
+
+	<p>
+		Description of what we call the 'ParseStream'. See
+		'ParseStream.cs'.
+	</p>
+
+	<ol>
+		<li>Preprocessor</li>
+		<li>Indentation processor</li>
+		<li>Buffer</li>
+		<li>Multilevel buffer (nested buffer)</li>
+		<li>Comment remover</li>
+		<li>The-last-new-line dropper</li>
+		<li>Inline processor (StopAt char x)</li>
+	</ol>
+	<p>
+		The preprocessor's job is mainly to remember the
+		current line number. The line number is only used
+		to throw ParseException which contain only the line
+		where something went wrong.
+	</p>
+	<p>
+		We're using here recursion. We have some kind of
+		indentation processor which makes it possible for a
+		nested YAML element to be parsed just like we would do
+		at the root level, without having to care about its
+		level of indentation or the way it appears.
+	</p>
+	<p>
+		Our parser is almost 100% a one pass parser. We can read
+		from a string but also from any kind of stream without
+		ever having to look back before the current position.
+		There are annoying YAML structures which require us
+		to look back. For instance, mappings doesn't require
+		to be preceded by a question mark, so actually we don't
+		know when we start such an implicit mapping. The parser
+		should do some kind of trial and error to guess the type
+		of node we are parsing. We use a circular buffer of 1024
+		just like described in the Yaml documentation to do some
+		lookahead to guess and rewind if we were wrong. Implicit
+		keys may not be longer then 1024, so the small size
+		won't be any problem. Later on this buffer becomes also useful 
+		while guessing the kind of scalar.
+	</p>
+	<p>
+		While trying to parse an implicit mapping we may need to
+		guess what type of scalar the key would be. This requires
+		a buffer inside the buffer, this layer doesn't create a
+		new buffer, but remembers the current position in the
+		already existing buffer and uses a stack of start positions
+		to restore the position while rewinding.
+	</p>
+	<p>
+		Another layer removes the comments.
+	</p>
+	<p>
+		The last newline of a block is never part of the node
+		content, but is only necessary to start a new node. This
+		newline will be dropped.
+	</p>
+	<p>
+		Inline sequences and mappings don't depend on indentation.
+		They start with an opening <q>{</q> or <q>[</q> and stop
+		at the matching bracket. This layer adds a method to set
+		the chars where the parser should stop parsing.
+	</p>
+	<p>
+		Note that we use corresponding methods. Each call
+		for the indent method <strong>must</strong> go hand
+		in hand with an unindent method. In the same way a call
+		for a StopAt must be followed later on with calling
+		the DontStop method.
+	</p>
+	<p>
+		Most of this levels implement this methods:
+	</p>
+	<dl>
+		<dt>Next</dt>
+			<dd>Move to the next character in the stream</dd>
+		<dt>Char</dt>
+			<dd>Return the current chararter</dd>
+		<dt>EOF (end of file)</dt>
+			<dd>True when we reached the end of the stream
+			or substream</dd>
+	</dl>
+	<p>
+		Each of the previously described layers derives from the
+		previous layer and overrides the parents functions. Other
+		parts of the parser only interact with the last layer.
+	</p>
+
+		<h4>More detailed description of the indentation processor</h4>
+		<p>
+			The indentation processor has two important public
+			methods: 'Indent' and 'UnIndent'. Calling the first
+			method implies that we are going into a childnode,
+			probably more indented,
+		</p>		
+<pre class="yaml-code">
+key:
+  value
+</pre>
+		<p>
+			but possibly the child is positioned directly after
+			the parent node like in:
+		</p>
+<pre class="yaml-code">
+key: value
+</pre>
+		<p>
+			The indent function sets an indentation-request
+			variable. When we continue moving through the stream
+			and we meet a newline, the indentation processor
+			checks how much the indentation is. If the indentation
+			is more then the indentation of the previous line,
+			than this line indeed belongs to the child node.
+			Otherwise, this layer pretends that this is the end
+			of the stream and set the EOF. Higher levels are fooled
+			that the stream has ended until the UnIndent method has
+			been called.
+
+			When the indentation is more, we save the current level
+	 		of indentation to be restored later on.
+
+			Calling the UnIndent function will cancel the indentation
+			request when we didn't meet a newline, otherwise we
+			unpop the last indentation level from the stack.
+		</p>
+
+		<h4 id="buffer">More detailed description of the buffer</h4>
+		<p>
+			We use a circular buffer (like a queue) with a size of
+			1k chars like described in the YAML documentation.
+			Lookahead over more then 1024 characters is not possible,
+			otherwise we could not call this a one-pass-parser. There
+			are three important integer variables in the buffer class:
+			rotation, position and size. Rotation points to the first
+			cell of the buffer. Position is the offset of the current
+			character in the buffer, so the actual position is
+			<code>(rotation + position) % 1024</code>. Size is the
+			length of the buffer part which is currently in use.
+		</p>
+		<p>
+			When calling the BuildLookaheadBuffer method, the buffer
+			will be initialized unless a build request has been done
+			before. A DestroyBuffer call does not actually destroy the
+			buffer, it only rotates the buffer. The current position
+			becomes the rotation index and then it's set to zero. At
+			that time only this layer knows that the buffer is still
+			in use. Each Next call rotates the buffer more and more,
+			until finally the buffer size becomes zero and it's really
+			destroyed. This is necessary to allow destroying while not
+			being at the end of the buffer. The Rewind call simply
+			resets the position.
+		</p>
+		<p>
+			Suppose that we build a buffer but a nested node requires
+			us to do some lookahead again. This is possible, and
+			therefore we have a stack (in the multilevelbuffer layer)
+			which remembers all the start positions. Rewinding restores
+			the stack peek. Destroying unpops the stack peek.
+		</p>
+
+		<h4 id="inlineprocessor">More detailed description of the inline processor</h4>
+		<p>
+			For instance, <q>{</q> indicates the start of an
+			inline mapping. The parser should stop at a matching
+			<q>}</q> or at a comma where a new item begins.
+		</p>
+<pre class="yaml">
+[aaa, bbb, ccc, {ddd: eee, "f:ff": ggg}]
+</pre>
+		<p>
+			A call of the StopAt method makes the inline processor
+			stop at one of the given characters. We use a stack to
+			override the 'parent' his behavior (e.g. in  nested
+			inline mappings or sequences). Note that a call of StopAt
+			can enlarge its character stream in contrast with Indent
+			who only reduces its.
+			The don't stop method cancels the StopAt behavior, and
+			restores the last setting.
+		</p>
+		<p>
+			We use this stop mechanism to parse mappings, inline
+			sequences and quoted strings.
+		</p>
+
+	<h3 id="determinenode">Determining the type of node</h3>
+		<h4>Explicit type indication</h4>
+		<p>
+			Nodes starting with a type indication (e.g: !!str) are
+			easy to parse, they require no lookahead. At the moment
+			we know that a node starts with two exclamation marks,
+			we can be sure that a type indication follows. After
+			reading the typename, we call the parse method for that
+			specific kind of node.
+		</p>
+		<h4 id="gues">Guessing</h4>
+		<p>
+			When no type indication is given, we have to guess what
+			kind of node follows. A hyphen (whether or not it must be
+			followed by a space is still a heavy discussion, we don't
+			require it at this time) or a opening square bracket is
+			the start of a mapping. A question mark or opening curled
+		       	bracket is the start of a mapping. Other types requires
+			lookahead via a buffer.
+		</p>
+		<p>
+			The next thing we try are inline mapping. We do an
+			indentation request and set StopAt(colon), parse recursively
+			the key and call DontStop and UnIndent. If the current
+			character at that moment is a colon, then we're talking
+			about an implicit mapping.
+		</p>
+		<p>
+			When the node wasn't an inline mapping we try all the
+			scalars one after one. The last scalar to try is a string.
+		</p>
+		
+	<h3 id="parsescalar">Parsing of the scalars</h3>
+	<p>
+		Yaml is made to map data types on the build in language types. We made
+		for each scalar an own wrapper class derived from Node.
+		Further it is possible to represent scalars that are not jet supported, 
+		for example the time zone of a timestamp. (This is not completely correct.
+		A time zone is supported in .NET 2.0, but for compatibility reasons we only use .NET 1.0)	
+	</p>
+	<p>
+		We also extend the normal number range. Integers are stored in a
+		long type, so numbers from –9,223,372,036,854,775,808 to 
+		9,223,372,036,854,775,807 can be used.
+	</p>
+	<p>
+		If there is a scalar expected then a ParseStream is given to the constructor 
+		of the Scalar class. Here we require guessing like described in the
+		previous section.  We used 
+		<a href="http://yaml.org/type/index.html#id838503" title="Yaml scalar Types">http://yaml.org/type/</a> 
+		as the reference. A important note is that there is not used the regular expression 
+		for pattern matching because of it&acute;s lack of efficiency and the
+		loss of being an one-pass parser.
+	</p>
+	
+	<h2 id="doc">Documentation</h2>
+	
+	<p>
+		We used <a href="http://ndoc.sourceforge.net/" title="NDoc Code Documentation Generator for .NET">NDoc</a>
+		for generating code documentation. It is based on the XML comment system of .NET 
+		and gives the possibility to generate documentation in different formats.<br/>
+	</p>
+	<p>
+		You can explore this documentation by using the menu on the left.
+		In this documentation you can also find the private members of the classes.
+		If you only want to use our parser, you may not need this. We leave it here,
+		because it is useful for development and good understanding of the parser.<br/>
+	</p>	
+	
+	<hr/>
+	
+	<p>
+		For some more information about Yaml we refer to the 
+		official site <a href="http://www.yaml.org/">http://www.yaml.org/</a>.<br/>
+		Other useful links are:
+
+		<ul>
+			<li>
+				<a href="http://whytheluckystiff.net/syck/" 
+					title="">
+					http://whytheluckystiff.net/syck/</a>
+				Yaml for Ruby, Python, PHP and OCaml
+				</li>
+			<li>
+				<a href="http://yaml4r.sourceforge.net/cookbook/" 
+					title="Yaml Cookbook for Ruby">
+					http://yaml4r.sourceforge.net/cookbook/</a>
+				Yaml Cookbook
+			</li>
+			<li>
+				<a href="http://yaml.kwiki.org/?YamlInFiveMinutes" 
+					title="YamlInFiveMinutes">
+					http://yaml.kwiki.org/?YamlInFiveMinutes</a>
+				Yaml in five minutes
+			</li>
+			<li>
+				<a href="http://yaml.kwiki.org/index.cgi?YamlTheSecondFiveMinutes" 
+					title="YamlTheSecondFiveMinutes">
+					http://yaml.kwiki.org/index.cgi?YamlTheSecondFiveMinutes</a>
+				Yaml in five minutes, the second five minutes
+			</li>
+
+		</ul>
+	</p>
+
+	<h2 id="vision">Our vision about YAML and its applications</h2>
+
+	<p>
+		Yaml is easy to read and understand. It's easy to write,
+		but in our opinion users have too much freedom in choosing
+		how they would write the same thing. This - what looks a
+		rich set of data types and ways to write the same - results
+		in more confusing rather then it helps. We agree with the
+		YAML community that there's a need to simplify the language
+		description.
+	</p>
+	<p>
+		A big advantage of Yaml over XML is its support for anchors
+		and references to this anchors. This supports not only
+		tree-based data structures but also cyclic and acyclic
+		data structures.
+	</p>
+	
+	<h2 id="credits">Credits</h2>
+	
+	<p> 
+		Special thanks goes to the educational team (Tom Van Laerhoven and Jo Vermeulen). 
+		Also we will thank Gert Van Gool and Ingo Berben who gives ous some good advice on
+		C# programming. They were doing at the same time another C# project.
+ 	</p>
+
+	<!-- Begin webstats4U code -->
+	<!-- Title: Yaml .NET Parser -->
+	<!-- URL: http://lumumba.uhasselt.be/~christophe/YAML/ -->
+	<script language="JavaScript" type="text/javascript" src="http://m1.webstats4u.com/m.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	<!--
+	  webstats4u("AD2MEgaJGhibO4bO4zXbMeL6+scw", 0);
+	// -->
+	</script>
+	<noscript>
+	<a target="_blank" href="http://www.webstats4u.com/stats?AD2MEgaJGhibO4bO4zXbMeL6+scw">
+	<img src="http://m1.webstats4u.com/n?id=AD2MEgaJGhibO4bO4zXbMeL6+scw" order="0" width="18" height="18" alt="Webstats4U - Gratis web site statist		ieken Eigen homepage website teller">
+	</a><br>
+	</noscript>
+	<!-- End webstats4U code -->
+</body>
+</html>

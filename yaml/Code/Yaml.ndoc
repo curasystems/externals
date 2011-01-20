@@ -1,0 +1,53 @@
+<project SchemaVersion="1.3">
+    <assemblies>
+        <assembly location=".\.\Bin\Debug\Yaml.dll" documentation=".\.\Yaml.xml" />
+    </assemblies>
+    <documenters>
+        <documenter name="Linear Html">
+            <property name="OutputDirectory" value="/home/jonathan/public_html/yaml/ndoc/\" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+            <property name="DocumentInternals" value="True" />
+            <property name="DocumentPrivates" value="True" />
+        </documenter>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\doc\" />
+        </documenter>
+        <documenter name="LaTeX">
+            <property name="OutputDirectory" value="/home/jonathan/public_html/yaml/ndoc/" />
+            <property name="TextFileFullName" value="Documentation.tex" />
+            <property name="TexFileBaseName" value="Documentation" />
+            <property name="LatexCompiler" value="latex" />
+            <property name="TexFileFullPath" value="/home/jonathan/public_html/yaml/ndoc/Documentation.tex" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value="../Manual/NDoc/\" />
+            <property name="HtmlHelpName" value="Yaml .NET Parser - Documentation" />
+            <property name="Title" value="Yaml .NET Parser" />
+            <property name="OutputTarget" value="Web" />
+            <property name="RootPageTOCName" value="Start page" />
+            <property name="RootPageFileName" value="..\Manual\Manual.html" />
+            <property name="LangID" value="2057" />
+            <property name="ShowMissingSummaries" value="True" />
+            <property name="ShowMissingRemarks" value="True" />
+            <property name="ShowMissingParams" value="True" />
+            <property name="ShowMissingReturns" value="True" />
+            <property name="ShowMissingValues" value="True" />
+            <property name="DocumentPrivates" value="True" />
+            <property name="FeedbackEmailAddress" value="jonathan.slenders@student.uhasselt.be;christophe.lambrechts@student.uhasselt.be" />
+            <property name="SdkDocVersion" value="SDK_v1_1" />
+        </documenter>
+        <documenter name="Intellisense">
+            <property name="OutputDirectory" value=".\intellisense\" />
+        </documenter>
+        <documenter name="VS.NET 2003">
+            <property name="OutputDirectory" value="/home/jonathan/public_html/yaml/ndoc/\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="An NDoc documented library" />
+        </documenter>
+        <documenter name="MSDN 2003">
+            <property name="OutputDirectory" value="/home/jonathan/public_html/yaml/ndoc/\" />
+            <property name="HtmlHelpName" value="Yaml test" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+    </documenters>
+</project>
