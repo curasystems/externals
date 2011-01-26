@@ -1,0 +1,292 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Stack.NakReceiverWindow</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Stack.NakReceiverWindow Class</DIV>
+<DIV CLASS="Description">
+
+Negative Acknowledgement receiver window. Detects gaps and request retransmission.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP650.HTM" TARGET="CNTFRAME">Entry</A></TD>
+<TD CLASS="TableLightDesc">
+Maintains association between sequence number and message
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP657.HTM" TARGET="CNTFRAME">sender</A></TD>
+<TD CLASS="TableLightDesc">The sender that this window is associated with<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP658.HTM" TARGET="CNTFRAME">rwlock</A></TD>
+<TD CLASS="TableLightDesc">Maintains synchronisation throughout the window<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP660.HTM" TARGET="CNTFRAME">head</A></TD>
+<TD CLASS="TableLightDesc">Keep track of *next* seqno to remove and highest received<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP661.HTM" TARGET="CNTFRAME">tail</A></TD>
+<TD CLASS="TableLightDesc">Last seqno received<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP662.HTM" TARGET="CNTFRAME">lowest_seen</A></TD>
+<TD CLASS="TableLightDesc">lowest seqno delivered so far<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP663.HTM" TARGET="CNTFRAME">highest_seen</A></TD>
+<TD CLASS="TableLightDesc">highest deliverable (or delivered) seqno so far<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP664.HTM" TARGET="CNTFRAME">msgs</A></TD>
+<TD CLASS="TableLightDesc">List received Entrys (i.e. seqno + message)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP665.HTM" TARGET="CNTFRAME">delivered_msgs</A></TD>
+<TD CLASS="TableLightDesc">Messages delivered; list of Entries<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP666.HTM" TARGET="CNTFRAME">cmd</A></TD>
+<TD CLASS="TableLightDesc">Method to call for retransmission<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP668.HTM" TARGET="CNTFRAME">retransmitter</A></TD>
+<TD CLASS="TableLightDesc">Retransmitter of missing messages<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP669.HTM" TARGET="CNTFRAME">NakReceiverWindow</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor: Creates a new instance with the given retransmit command
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP670.HTM" TARGET="CNTFRAME">NakReceiverWindow</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor: Creates a new instance with the given retransmit command
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP671.HTM" TARGET="CNTFRAME">setRetransmitTimeouts</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the invervals between retransmit requests
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP672.HTM" TARGET="CNTFRAME">add</A></TD>
+<TD CLASS="TableLightDesc">
+Adds a message according to its sequence number.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP673.HTM" TARGET="CNTFRAME">remove</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the next received message.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP674.HTM" TARGET="CNTFRAME">stable</A></TD>
+<TD CLASS="TableLightDesc">
+Deletes all messages that are less than the seqno.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP675.HTM" TARGET="CNTFRAME">reset</A></TD>
+<TD CLASS="TableLightDesc">
+Reset the retransmitter and the nak window
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP676.HTM" TARGET="CNTFRAME">destroy</A></TD>
+<TD CLASS="TableLightDesc">
+Stop the retransmitter and reset the nak window
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP677.HTM" TARGET="CNTFRAME">getHighestDelivered</A></TD>
+<TD CLASS="TableLightDesc">
+Return the highest sequence number of a message consumed by the application
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP678.HTM" TARGET="CNTFRAME">getLowestSeen</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the lowest sequence number of a message that has been
+delivered or is a candidate for delivery
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP679.HTM" TARGET="CNTFRAME">getHighestSeen</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the highest deliverable seqno
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP680.HTM" TARGET="CNTFRAME">getMissingMessages</A></TD>
+<TD CLASS="TableLightDesc">
+Find all messages between, and including, 'low' and 'high' that have a null msg.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP681.HTM" TARGET="CNTFRAME">getHighestReceived</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the highest sequence number received so far.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP682.HTM" TARGET="CNTFRAME">size</A></TD>
+<TD CLASS="TableLightDesc">
+Number of messages received
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP683.HTM" TARGET="CNTFRAME">toString</A></TD>
+<TD CLASS="TableLightDesc">
+String representation of the Receiver Window
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP684.HTM" TARGET="CNTFRAME">_updateLowestSeen</A></TD>
+<TD CLASS="TableLightDesc">
+Updates the lowest seen sequence number
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP685.HTM" TARGET="CNTFRAME">_updateHighestSeen</A></TD>
+<TD CLASS="TableLightDesc">
+Updates the highest seen sequence number
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP686.HTM" TARGET="CNTFRAME">_reset</A></TD>
+<TD CLASS="TableLightDesc">
+Reset the Nak window.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Keeps track of messages according to their sequence numbers. Allows
+messages to be added out of order, and with gaps between sequence numbers.
+Method <code>remove()</code> removes the first message with a sequence
+number that is 1 higher than <code>next_to_remove</code> (this variable is
+then incremented), or it returns null if no message is present, or if no
+message's sequence number is 1 higher.
+<p>
+When there is a gap upon adding a message, its seqno will be added to the 
+Retransmitter, which (using a timer) requests retransmissions of missing
+messages and keeps on trying until the message has been received, or the
+member who sent the message is suspected.
+</p>
+<P>
+</DIV>
+</BODY>
+</HTML>

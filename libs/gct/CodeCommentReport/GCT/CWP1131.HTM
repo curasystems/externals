@@ -1,0 +1,241 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.UNICAST</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.UNICAST Class</DIV>
+<DIV CLASS="Description">
+
+Protocol: Reliable unicast layer.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Implemented interfaces:  </SPAN>RetransmitCommand</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1132.HTM" TARGET="CNTFRAME">operational</A></TD>
+<TD CLASS="TableLightDesc">Signifies the channel is active<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1133.HTM" TARGET="CNTFRAME">members</A></TD>
+<TD CLASS="TableLightDesc">Current members in the group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1134.HTM" TARGET="CNTFRAME">connections</A></TD>
+<TD CLASS="TableLightDesc">Contains Entries for each member<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1135.HTM" TARGET="CNTFRAME">timeout</A></TD>
+<TD CLASS="TableLightDesc">For AckSenderWindow: max time to wait for missing acks<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1136.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local Address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1137.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">Scheduler used for retransmissions (AckSenderWindow)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1138.HTM" TARGET="CNTFRAME">window_size</A></TD>
+<TD CLASS="TableLightDesc">Sliding window: Max number of msgs in table (AckSenderWindow)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1139.HTM" TARGET="CNTFRAME">min_threshold</A></TD>
+<TD CLASS="TableLightDesc">Sliding window: Number under which table has to fall before we resume adding msgs (AckSenderWindow)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1140.HTM" TARGET="CNTFRAME">Entry</A></TD>
+<TD CLASS="TableLightDesc">
+An Entry is stored for every member that sends a message
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1148.HTM" TARGET="CNTFRAME">UNICAST</A></TD>
+<TD CLASS="TableLightDesc">
+Protocol : STABLE computes the broadcast messages that are stable
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1149.HTM" TARGET="CNTFRAME">getName</A></TD>
+<TD CLASS="TableLightDesc">
+Returns unique protocol name
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1150.HTM" TARGET="CNTFRAME">setProperties</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the properties specified in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1151.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the Scheduler to the Scheduler present in the ProtocolSinkStack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1152.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Resets and removes all sender and receiver windows.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1153.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> travelling up the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1154.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1155.HTM" TARGET="CNTFRAME">removeAllConnections</A></TD>
+<TD CLASS="TableLightDesc">
+Resets and removes all sender and receiver windows.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1156.HTM" TARGET="CNTFRAME">getInitialSeqno</A></TD>
+<TD CLASS="TableLightDesc">
+Returns random initial sequence number between 1 and 100
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1157.HTM" TARGET="CNTFRAME">retransmit</A></TD>
+<TD CLASS="TableLightDesc">
+Called by AckSenderWindow to resend messages for which no ACK has been received yet
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1158.HTM" TARGET="CNTFRAME">handleDataReceived</A></TD>
+<TD CLASS="TableLightDesc">
+Processes a unicast Message once received
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1159.HTM" TARGET="CNTFRAME">handleAckReceived</A></TD>
+<TD CLASS="TableLightDesc">
+Add the acknowledgement (ACK) to hashtable.sender.sent_msgs
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1160.HTM" TARGET="CNTFRAME">sendAck</A></TD>
+<TD CLASS="TableLightDesc">
+Sends an acknowledgement (ACK) to the sender of the message
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Uses acknowledgement scheme similar to TCP to provide lossless transmission
+of unicast messages (for reliable multicast see NAKACK layer). When a message is sent to a peer for
+the first time, we add the pair (peer_addr, Entry) to the hashtable (peer address is the key). All
+messages sent to that peer will be added to hashtable.peer_addr.sent_msgs. When we receive a
+message from a peer for the first time, another entry will be created and added to the hashtable
+(unless already existing). Msgs will then be added to hashtable.peer_addr.received_msgs.
+<p> 
+This layer is used to reliably transmit point-to-point messages, that is, either messages sent to a
+single receiver (vs. messages multicast to a group) or for example replies to a multicast message. The 
+sender uses an <code>AckSenderWindow</code> which retransmits messages for which it hasn't received
+an ACK, the receiver uses <code>AckReceiverWindow</code> which keeps track of the lowest seqno
+received so far, and keeps messages in order.</p>
+<p>
+Messages in both AckSenderWindows and AckReceiverWindows will be removed. A message will be removed from
+AckSenderWindow when an ACK has been received for it and messages will be removed from AckReceiverWindow
+whenever a message is received: the new message is added and then we try to remove as many messages as
+possible (until we stop at a gap, or there are no more messages).</p>
+<P>
+</DIV>
+</BODY>
+</HTML>

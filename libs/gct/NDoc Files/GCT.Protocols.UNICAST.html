@@ -1,0 +1,19 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>UNICAST Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">UNICAST Class</h1></div></div><div id="nstext">
+            Protocol: Reliable unicast layer.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.Protocols.UNICASTMembers.html">UNICAST Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <a href="GCT.Stack.Protocol.html">Protocol</a><br>      <b>UNICAST</b></p><div class="syntax"><div>public class UNICAST : Protocol, RetransmitCommand</div></div><h4 class="dtH4">Remarks</h4>
+            Uses acknowledgement scheme similar to TCP to provide lossless transmission
+            of unicast messages (for reliable multicast see NAKACK layer). When a message is sent to a peer for
+            the first time, we add the pair (peer_addr, Entry) to the hashtable (peer address is the key). All
+            messages sent to that peer will be added to hashtable.peer_addr.sent_msgs. When we receive a
+            message from a peer for the first time, another entry will be created and added to the hashtable
+            (unless already existing). Msgs will then be added to hashtable.peer_addr.received_msgs.
+            <p> 
+            This layer is used to reliably transmit point-to-point messages, that is, either messages sent to a
+            single receiver (vs. messages multicast to a group) or for example replies to a multicast message. The 
+            sender uses an <pre class="code">AckSenderWindow</pre> which retransmits messages for which it hasn't received
+            an ACK, the receiver uses <pre class="code">AckReceiverWindow</pre> which keeps track of the lowest seqno
+            received so far, and keeps messages in order.</p><p>
+            Messages in both AckSenderWindows and AckReceiverWindows will be removed. A message will be removed from
+            AckSenderWindow when an ACK has been received for it and messages will be removed from AckReceiverWindow
+            whenever a message is received: the new message is added and then we try to remove as many messages as
+            possible (until we stop at a gap, or there are no more messages).</p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.Protocols.UNICASTMembers.html">UNICAST Members</a> | <a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="UNICAST class, about UNICAST class"></object></div></body></html>

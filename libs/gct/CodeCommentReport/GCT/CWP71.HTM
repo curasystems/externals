@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Event</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Event Class</DIV>
+<DIV CLASS="Description">
+
+Used for intra-stack communication.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP266.HTM" TARGET="CNTFRAME">MSG</A></TD>
+<TD CLASS="TableLightDesc">Message Event (Arg = Message)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP267.HTM" TARGET="CNTFRAME">CONNECT</A></TD>
+<TD CLASS="TableLightDesc">Connect Event (Arg = group name)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP268.HTM" TARGET="CNTFRAME">CONNECT_OK</A></TD>
+<TD CLASS="TableLightDesc">Reply to Connect Event (Arg = group multicast address)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP269.HTM" TARGET="CNTFRAME">DISCONNECT</A></TD>
+<TD CLASS="TableLightDesc">Disconnect Event (Arg = member address)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP270.HTM" TARGET="CNTFRAME">DISCONNECT_OK</A></TD>
+<TD CLASS="TableLightDesc">Reply to Disconnect Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP271.HTM" TARGET="CNTFRAME">VIEW_CHANGE</A></TD>
+<TD CLASS="TableLightDesc">View Change Event (Arg = new View)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP272.HTM" TARGET="CNTFRAME">GET_LOCAL_ADDRESS</A></TD>
+<TD CLASS="TableLightDesc">Get Local Address Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP273.HTM" TARGET="CNTFRAME">SET_LOCAL_ADDRESS</A></TD>
+<TD CLASS="TableLightDesc">Set Local Address Event (Arg = local Address)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP274.HTM" TARGET="CNTFRAME">CLEANUP</A></TD>
+<TD CLASS="TableLightDesc">Clean Up Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP275.HTM" TARGET="CNTFRAME">CLEANUP_OK</A></TD>
+<TD CLASS="TableLightDesc">Reply to Clean Up Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP276.HTM" TARGET="CNTFRAME">SUSPECT</A></TD>
+<TD CLASS="TableLightDesc">Suspect Event (Arg = Address of suspected member)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP277.HTM" TARGET="CNTFRAME">FIND_INITIAL_MBRS</A></TD>
+<TD CLASS="TableLightDesc">Find Initial Members Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP278.HTM" TARGET="CNTFRAME">FIND_INITIAL_MBRS_OK</A></TD>
+<TD CLASS="TableLightDesc">Reply to Find Initial Members Event (Arg = ArrayList of PingRsps)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP279.HTM" TARGET="CNTFRAME">TMP_VIEW</A></TD>
+<TD CLASS="TableLightDesc">Temporary View Event (Arg = new View)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP280.HTM" TARGET="CNTFRAME">BECOME_SERVER</A></TD>
+<TD CLASS="TableLightDesc">Become Server Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP281.HTM" TARGET="CNTFRAME">STABLE</A></TD>
+<TD CLASS="TableLightDesc">Stable Event (Arg = stable Digest)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP282.HTM" TARGET="CNTFRAME">GET_DIGEST</A></TD>
+<TD CLASS="TableLightDesc">Get Digest Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP283.HTM" TARGET="CNTFRAME">GET_DIGEST_OK</A></TD>
+<TD CLASS="TableLightDesc">Reply to Get Digest Event (Arg = Digest)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP284.HTM" TARGET="CNTFRAME">SET_DIGEST</A></TD>
+<TD CLASS="TableLightDesc">Set Digest Event (Arg = new Digest)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP285.HTM" TARGET="CNTFRAME">EXIT</A></TD>
+<TD CLASS="TableLightDesc">Exit Event<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP286.HTM" TARGET="CNTFRAME">UNSUSPECT</A></TD>
+<TD CLASS="TableLightDesc">Unsuspect Event (Arg = Address of previously suspected member)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP287.HTM" TARGET="CNTFRAME">MERGE_DIGEST</A></TD>
+<TD CLASS="TableLightDesc">Merge Digest Event (Arg = Digest to merge)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP288.HTM" TARGET="CNTFRAME">type</A></TD>
+<TD CLASS="TableLightDesc">
+Current type of event
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP289.HTM" TARGET="CNTFRAME">arg</A></TD>
+<TD CLASS="TableLightDesc">
+Object associated with the type
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP290.HTM" TARGET="CNTFRAME">Event</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP291.HTM" TARGET="CNTFRAME">Event</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP292.HTM" TARGET="CNTFRAME">Type</A></TD>
+<TD CLASS="TableLightDesc">
+Gets and sets the type of the Event
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP294.HTM" TARGET="CNTFRAME">Arg</A></TD>
+<TD CLASS="TableLightDesc">
+Gets and sets the object associated with the Event
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP296.HTM" TARGET="CNTFRAME">type2String</A></TD>
+<TD CLASS="TableLightDesc">
+Converts an Event type to a string representation
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP297.HTM" TARGET="CNTFRAME">ToString</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a string representation of the Event 
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+</BODY>
+</HTML>

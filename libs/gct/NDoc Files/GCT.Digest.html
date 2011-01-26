@@ -1,0 +1,15 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>Digest Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">Digest Class</h1></div></div><div id="nstext">
+            Message Digest for every member in the current group.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.DigestMembers.html">Digest Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <b>Digest</b></p><div class="syntax"><div>public class Digest</div></div><h4 class="dtH4">Remarks</h4>
+            A message digest, which is used by NAKACK for keeping track of current 
+            seqnos for all members. It contains pairs of senders and a range of seqnos 
+            (low and high), where each sender is associated with its highest and 
+            lowest seqnos seen so far. That is, the lowest seqno which was not yet garbage-collected and the highest that was seen so far and is deliverable (or was already delivered) to the application. A range of [0 - 0] means no messages have been received yet. 
+            <p>
+            The highest <i>seen</i> sequence number is used to disseminate information about the last (highest) message M 
+            received from a sender P. Since we might be using a negative acknowledgment 
+            message numbering scheme, we would never know if the last message was lost. 
+            Therefore we periodically gossip and include the last message seqno. Members 
+            who haven't seen it (e.g. because msg was dropped) will request a 
+            retransmission.
+            </p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.html">GCT Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.DigestMembers.html">Digest Members</a> | <a href="GCT.html">GCT Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="Digest class, about Digest class"></object></div></body></html>

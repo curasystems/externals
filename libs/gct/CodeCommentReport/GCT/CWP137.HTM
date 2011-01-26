@@ -1,0 +1,378 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Stack.ProtocolSinkStack</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Stack.ProtocolSinkStack Class</DIV>
+<DIV CLASS="Description">
+
+Representation of stack of Protocols
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Implemented interfaces:  </SPAN>IServerChannelSink, IMessageSink</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP790.HTM" TARGET="CNTFRAME">top_prot</A></TD>
+<TD CLASS="TableLightDesc">Top most Protocol in the stack<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP791.HTM" TARGET="CNTFRAME">bottom_prot</A></TD>
+<TD CLASS="TableLightDesc">Bottom most Protocol in the stack<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP792.HTM" TARGET="CNTFRAME">conf</A></TD>
+<TD CLASS="TableLightDesc">Helper class for creating and configurating Protocol layers<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP793.HTM" TARGET="CNTFRAME">setup_string</A></TD>
+<TD CLASS="TableLightDesc">Initial stack configuration string<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP794.HTM" TARGET="CNTFRAME">channel</A></TD>
+<TD CLASS="TableLightDesc">Channel associated with the stack<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP795.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local Address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP796.HTM" TARGET="CNTFRAME">stopped</A></TD>
+<TD CLASS="TableLightDesc">Determine whether the Stack is stopped<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP797.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">Scheduler of tasks<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP798.HTM" TARGET="CNTFRAME">objectURI</A></TD>
+<TD CLASS="TableLightDesc">Object URI<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP799.HTM" TARGET="CNTFRAME">channelURI</A></TD>
+<TD CLASS="TableLightDesc">Current Channel URI<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP800.HTM" TARGET="CNTFRAME">remotingTimeout</A></TD>
+<TD CLASS="TableLightDesc">Time to wait for a response to a Remoting request<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP801.HTM" TARGET="CNTFRAME">remotingMutex</A></TD>
+<TD CLASS="TableLightDesc">Used to sync requests and responses<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP802.HTM" TARGET="CNTFRAME">remotingResponses</A></TD>
+<TD CLASS="TableLightDesc">List of Reomting responses<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP803.HTM" TARGET="CNTFRAME">members</A></TD>
+<TD CLASS="TableLightDesc">Members in current group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP804.HTM" TARGET="CNTFRAME">currentMethodCall</A></TD>
+<TD CLASS="TableLightDesc">Stores the current Remoting request in transmission<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP805.HTM" TARGET="CNTFRAME">responseChooser</A></TD>
+<TD CLASS="TableLightDesc">Chooses which response to deliver to the Remoting infrastructure<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP806.HTM" TARGET="CNTFRAME">ProtocolSinkStack</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP807.HTM" TARGET="CNTFRAME">ResponseChooser</A></TD>
+<TD CLASS="TableLightDesc">
+Gets or sets the RemotingChooser
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP809.HTM" TARGET="CNTFRAME">ObjectURI</A></TD>
+<TD CLASS="TableLightDesc">
+Gets and sets the ObjectURI
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP811.HTM" TARGET="CNTFRAME">ChannelURI</A></TD>
+<TD CLASS="TableLightDesc">
+Gets and sets the ChannelURI
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP813.HTM" TARGET="CNTFRAME">setup</A></TD>
+<TD CLASS="TableLightDesc">
+Configures and initilises stack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP814.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Passes Events down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP815.HTM" TARGET="CNTFRAME">startUpHandler</A></TD>
+<TD CLASS="TableLightDesc">
+Overrides base class stopping superfluous threads
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP816.HTM" TARGET="CNTFRAME">startDownHandler</A></TD>
+<TD CLASS="TableLightDesc">
+Overrides base class stopping superfluous threads
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP817.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Start all layers. 
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP818.HTM" TARGET="CNTFRAME">getProtocols</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a list of all the Protocols in the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP819.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stop all layers.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP820.HTM" TARGET="CNTFRAME">destroy</A></TD>
+<TD CLASS="TableLightDesc">
+Destroys message queues and threads
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP821.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Receives events from the top of the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP822.HTM" TARGET="CNTFRAME">determineResponse</A></TD>
+<TD CLASS="TableLightDesc">
+Determines the Remoting response to send to the infrastructure.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP823.HTM" TARGET="CNTFRAME">handleRemotingRequest</A></TD>
+<TD CLASS="TableLightDesc">
+Sends request into infrastructure, then passes back result.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP825.HTM" TARGET="CNTFRAME">handleRemotingResponse</A></TD>
+<TD CLASS="TableLightDesc">
+Stores all Remoting responses.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP826.HTM" TARGET="CNTFRAME">ProcessMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Retrieves response to Remoting request.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP827.HTM" TARGET="CNTFRAME">AsyncProcessResponse</A></TD>
+<TD CLASS="TableLightDesc">
+Not Supported by this channel.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP828.HTM" TARGET="CNTFRAME">GetResponseStream</A></TD>
+<TD CLASS="TableLightDesc">
+This should never get called since we're behave as the last in the chain.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP829.HTM" TARGET="CNTFRAME">NextChannelSink</A></TD>
+<TD CLASS="TableLightDesc">
+Should always be null.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP831.HTM" TARGET="CNTFRAME">Properties</A></TD>
+<TD CLASS="TableLightDesc">
+Should always be null.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP833.HTM" TARGET="CNTFRAME">NextSink</A></TD>
+<TD CLASS="TableLightDesc">
+There will be no other message sinks in the chain
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP835.HTM" TARGET="CNTFRAME">AsyncProcessMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Not Supported by this channel.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP836.HTM" TARGET="CNTFRAME">SyncProcessMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Processes the Remoting call.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+The ProtocolStack manages a number of protocols layered above each other. 
+It creates all protocol classes, initializes them and, when ready, starts 
+all of them, beginning with the bottom most protocol. It also dispatches 
+messages received from the stack to registered objects (e.g. channel, GMP) 
+and sends messages sent by those objects down the stack.
+<p>
+The ProtocolStack is also the connecting class with the client and server Remoting 
+infrastructures. Remoting request messages are passed from the infrastructure and
+responses are passed back.
+</p>
+<P>
+</DIV>
+</BODY>
+</HTML>

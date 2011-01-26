@@ -1,0 +1,228 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.FD</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.FD Class</DIV>
+<DIV CLASS="Description">
+
+Protocol: Failure Detection based on simple heartbeat protocol
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP311.HTM" TARGET="CNTFRAME">ping_dest</A></TD>
+<TD CLASS="TableLightDesc">Member to check if active<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP312.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP313.HTM" TARGET="CNTFRAME">timeout</A></TD>
+<TD CLASS="TableLightDesc">Number of millisecs to wait for an are-you-alive msg<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP314.HTM" TARGET="CNTFRAME">last_ack</A></TD>
+<TD CLASS="TableLightDesc">Time of last acknowledgement<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP315.HTM" TARGET="CNTFRAME">num_tries</A></TD>
+<TD CLASS="TableLightDesc">Number of heartbeats still to try before suspecting member<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP316.HTM" TARGET="CNTFRAME">max_tries</A></TD>
+<TD CLASS="TableLightDesc">Maximum number of times to send a heartbeat<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP317.HTM" TARGET="CNTFRAME">members</A></TD>
+<TD CLASS="TableLightDesc">Current members in the group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP318.HTM" TARGET="CNTFRAME">invalid_pingers</A></TD>
+<TD CLASS="TableLightDesc">Collection of pingers that aren't members (keys=Address, val=int(number of heartbeats received))<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP319.HTM" TARGET="CNTFRAME">shun</A></TD>
+<TD CLASS="TableLightDesc">If set, nonmember pingers will be shunned<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP320.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">Used to run Monitor tasks<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP322.HTM" TARGET="CNTFRAME">monitor</A></TD>
+<TD CLASS="TableLightDesc">Task that performs the actual monitoring for failure detection<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP324.HTM" TARGET="CNTFRAME">FD</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP325.HTM" TARGET="CNTFRAME">getName</A></TD>
+<TD CLASS="TableLightDesc">
+Returns unique <c>Protocol</c> name
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP326.HTM" TARGET="CNTFRAME">setProperties</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the properties specified in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP327.HTM" TARGET="CNTFRAME">getPingDest</A></TD>
+<TD CLASS="TableLightDesc">
+Calculate the member that should be checked if alive
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP328.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling up the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP329.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP330.HTM" TARGET="CNTFRAME">init</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the <c>TimeScheduler</c> to be used to the one present in the <c>ProtocolSinkStack</c>
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP331.HTM" TARGET="CNTFRAME">startMonitor</A></TD>
+<TD CLASS="TableLightDesc">
+Starts the Monitor task.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP332.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stops the Monitor task if its active.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP333.HTM" TARGET="CNTFRAME">shunInvalidHeartbeatSender</A></TD>
+<TD CLASS="TableLightDesc">
+Shun member pinging this member if it is not a member of the group.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP323.HTM" TARGET="CNTFRAME">Monitor</A></TD>
+<TD CLASS="TableLightDesc">
+Internal Class used to sent Heartbeat messages.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Regularly polls members for
+liveness. Passes SUSPECT message up the stack when a member is not reachable. The simple
+algorithms works as follows: the membership is known and ordered. Each HB protocol
+periodically sends a 'are-you-alive' message to its *neighbor*. A neighbor is the next in
+rank in the membership list. It is recomputed upon a view change. When a response hasn't
+been received for n milliseconds and m tries, the corresponding member is suspected (and
+eventually excluded if faulty).<p>
+FD starts when it detects (in a view change notification) that there are at least
+2 members in the group. It stops running when the membership drops below 2.</p><p>
+When a message is received from the monitored neighbor member, it causes the pinger thread to
+'skip' sending the next are-you-alive message. Thus, traffic is reduced.</p><p>
+When we receive a ping from a member that's not in the membership list, we shun it by sending it a
+NOT_MEMBER message. That member will then leave the group (and possibly rejoin). This is only done if
+<code>shun</code> is true.</p>
+<P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,310 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.STABLE</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.STABLE Class</DIV>
+<DIV CLASS="Description">
+
+Protocol : STABLE computes the broadcast messages that are stable
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP935.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local Address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP936.HTM" TARGET="CNTFRAME">mbrs</A></TD>
+<TD CLASS="TableLightDesc">Current Members in the group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP937.HTM" TARGET="CNTFRAME">digest</A></TD>
+<TD CLASS="TableLightDesc">Keeps track of the highest seqnos from all members<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP938.HTM" TARGET="CNTFRAME">digest_promise</A></TD>
+<TD CLASS="TableLightDesc">Synchronises the reception of the digest<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP939.HTM" TARGET="CNTFRAME">heard_from</A></TD>
+<TD CLASS="TableLightDesc">Keeps track of the members that have already responded<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP940.HTM" TARGET="CNTFRAME">digest_timeout</A></TD>
+<TD CLASS="TableLightDesc">Time to wait until digest is received <P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP941.HTM" TARGET="CNTFRAME">desired_avg_gossip</A></TD>
+<TD CLASS="TableLightDesc">Receive a STABLE gossip every x seconds<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP942.HTM" TARGET="CNTFRAME">stability_delay</A></TD>
+<TD CLASS="TableLightDesc">Delay before we send STABILITY msg<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP943.HTM" TARGET="CNTFRAME">stability_task</A></TD>
+<TD CLASS="TableLightDesc">Scheduled task the sends stability message<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP945.HTM" TARGET="CNTFRAME">stability_mutex</A></TD>
+<TD CLASS="TableLightDesc">Synchronizes on stability_task<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP946.HTM" TARGET="CNTFRAME">stable_task</A></TD>
+<TD CLASS="TableLightDesc">Multicasts periodic STABLE message<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP948.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">To send periodic STABLE/STABILITY msgs<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP949.HTM" TARGET="CNTFRAME">max_gossip_runs</A></TD>
+<TD CLASS="TableLightDesc">maximum number of times the StableTask runs before terminating<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP950.HTM" TARGET="CNTFRAME">num_gossip_runs</A></TD>
+<TD CLASS="TableLightDesc">Decrementing gossips still to be performed<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP951.HTM" TARGET="CNTFRAME">random</A></TD>
+<TD CLASS="TableLightDesc">Ranom number generator<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP952.HTM" TARGET="CNTFRAME">STABLE</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP953.HTM" TARGET="CNTFRAME">getName</A></TD>
+<TD CLASS="TableLightDesc">
+Returns unique protocol name
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP954.HTM" TARGET="CNTFRAME">requiredUpServices</A></TD>
+<TD CLASS="TableLightDesc">
+List of Events that need to be handled by layers above.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP955.HTM" TARGET="CNTFRAME">setProperties</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the properties specified in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP956.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the Scheduler to the Scheduler present in the ProtocolSinkStack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP957.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stops any stability gossiping
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP958.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> travelling up the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP959.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP960.HTM" TARGET="CNTFRAME">initialize</A></TD>
+<TD CLASS="TableLightDesc">
+Initialises (resets) the members heard from and the stable digest.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP961.HTM" TARGET="CNTFRAME">startStableTask</A></TD>
+<TD CLASS="TableLightDesc">
+Starts the checking for stability
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP962.HTM" TARGET="CNTFRAME">stopStableTask</A></TD>
+<TD CLASS="TableLightDesc">
+Stops the checking for stability
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP963.HTM" TARGET="CNTFRAME">handleStableGossip</A></TD>
+<TD CLASS="TableLightDesc">
+Called when a stability gossip is received.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP964.HTM" TARGET="CNTFRAME">sendStabilityMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Schedules a stability message to be mcast after a random number of milliseconds.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP965.HTM" TARGET="CNTFRAME">handleStabilityMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Stops any awaiting stability multicasts, passes STABLE Event up the stack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP966.HTM" TARGET="CNTFRAME">printStabilityDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a string representation of the stable digest
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP947.HTM" TARGET="CNTFRAME">StableTask</A></TD>
+<TD CLASS="TableLightDesc">
+Multicasts periodic STABLE message.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP944.HTM" TARGET="CNTFRAME">StabilitySendTask</A></TD>
+<TD CLASS="TableLightDesc">
+Multicasts a STABILITY message.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Computes the broadcast messages that are stable, i.e. have been received by all members. Sends
+STABLE events up the stack when this is the case. This allows NAKACK to garbage collect messages that
+have been seen by all members.
+<p>
+Works as follows: periodically we mcast our highest seqnos (seen for each member) to the group.
+A stability vector, which maintains the highest seqno for each member and initially contains no data,
+is updated when such a message is received. The entry for a member P is computed set to 
+min(entry[P], digest[P]). When messages from all members have been received, a stability
+message is mcast, which causes all members to send a STABLE event up the stack (triggering garbage collection
+in the NAKACK layer).</p>
+<p>
+The stable task now terminates after max_num_gossips if no messages or view changes have been sent or received
+in the meantime. It will resume when messages are received. This effectively suspends sending superfluous
+STABLE messages in the face of no activity.</p>
+<P>
+</DIV>
+</BODY>
+</HTML>

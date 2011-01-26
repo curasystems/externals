@@ -1,0 +1,25 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>GMS.castViewChange Method (ArrayList, ArrayList, ArrayList)</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">GMS.castViewChange Method (ArrayList, ArrayList, ArrayList)</h1></div></div><div id="nstext"><p>
+            Calcualates and multicasts a new view.
+            </p><div class="syntax">public <a href="GCT.View.html">View</a> castViewChange(<br>   <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemCollectionsArrayListClassTopic.htm">ArrayList</a> <i>new_mbrs</i>,<br>   <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemCollectionsArrayListClassTopic.htm">ArrayList</a> <i>old_mbrs</i>,<br>   <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemCollectionsArrayListClassTopic.htm">ArrayList</a> <i>suspected_mbrs</i><br>);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>new_mbrs</i></dt><dd>New members to be added to the view</dd><dt><i>old_mbrs</i></dt><dd>Old members to be removed from the view</dd><dt><i>suspected_mbrs</i></dt><dd>Suspected members to be removed from the view</dd></dl><h4 class="dtH4">Return Value</h4><p>The new View</p><h4 class="dtH4">Remarks</h4>
+            Compute a new view, given the current view, the new members and the suspected/left
+             members. Then simply mcast the view to all members. This is different to the VS GMS protocol,
+            in which we run a FLUSH protocol which tries to achive consensus on the set of messages mcast in
+            the current view before proceeding to install the next view.
+            The members for the new view are computed as follows:
+            			existing          leaving        suspected          joining
+            
+            1. new_view      y                 n               n                 y
+            2. tmp_view      y                 y               n                 y
+            (view_dest)
+            <p>
+            The new view to be installed includes the existing members plus the joining ones and
+            excludes the leaving and suspected members.
+            </p>
+            A temporary view is sent down the stack as an <em>event</em>. This allows the bottom layer
+            (e.g. UDP or TCP) to determine the members to which to send a multicast message. Compared
+            to the new view, leaving members are <em>included</em> since they have are waiting for a
+            view in which they are not members any longer before they leave. So, if we did not set a
+            temporary view, joining members would not receive the view (signalling that they have been
+            joined successfully). The temporary view is essentially the current view plus the joining
+            members (old members are still part of the current view).
+            <h4 class="dtH4">See Also</h4><p><a href="GCT.Protocols.GMS.html">GMS Class</a> | <a href="GCT.Protocols.GMSMembers.html">GMS Members</a> | <a href="GCT.Protocols.html">GCT.Protocols Namespace</a> | <a href="GCT.Protocols.GMS.castViewChange.html">GMS.castViewChange Overload List</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="castViewChange method"><param name="Keyword" value="castViewChange method, GMS class"><param name="Keyword" value="GMS.castViewChange method"></object></div></body></html>

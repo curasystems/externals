@@ -1,0 +1,13 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>NakReceiverWindow.add Method</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">NakReceiverWindow.add Method </h1></div></div><div id="nstext"><p>
+            Adds a message according to its sequence number.
+            </p><div class="syntax">public <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> add(<br>   <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemInt64ClassTopic.htm">long</a> <i>seqno</i>,<br>   <a href="GCT.Message.html">Message</a> <i>msg</i><br>);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>seqno</i></dt><dd>Sequence number of the message.</dd><dt><i>msg</i></dt><dd>Message to add.</dd></dl><h4 class="dtH4">Remarks</h4><p>
+            Variables <pre class="code">head</pre> and <pre class="code">tail</pre> mark the start and
+            end of the messages received, but not delivered yet. When a message is
+            received, if its seqno is smaller than <pre class="code">head</pre>, it is
+            discarded (already received). If it is bigger than <pre class="code">tail</pre>,
+            we advance <pre class="code">tail</pre> and add empty elements. If it is between
+            <pre class="code">head</pre> and <pre class="code">tail</pre>, we set the corresponding
+            missing (or already present) element. If it is equal to
+            <pre class="code">tail</pre>, we advance the latter by 1 and add the message
+            (default case).
+            </p><h4 class="dtH4">See Also</h4><p><a href="GCT.Stack.NakReceiverWindow.html">NakReceiverWindow Class</a> | <a href="GCT.Stack.NakReceiverWindowMembers.html">NakReceiverWindow Members</a> | <a href="GCT.Stack.html">GCT.Stack Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="add method"><param name="Keyword" value="add method, NakReceiverWindow class"><param name="Keyword" value="NakReceiverWindow.add method"></object></div></body></html>

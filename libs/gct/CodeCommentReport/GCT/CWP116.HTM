@@ -1,0 +1,489 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.GMS</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.GMS Class</DIV>
+<DIV CLASS="Description">
+
+Protocol: Group Membership System (GMS) maintains the members in a group.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP354.HTM" TARGET="CNTFRAME">impl</A></TD>
+<TD CLASS="TableLightDesc">Role of the GMS at present<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP356.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local Address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP357.HTM" TARGET="CNTFRAME">group_addr</A></TD>
+<TD CLASS="TableLightDesc">Group multicast Address<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP358.HTM" TARGET="CNTFRAME">members</A></TD>
+<TD CLASS="TableLightDesc">Membership of group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP360.HTM" TARGET="CNTFRAME">tmp_members</A></TD>
+<TD CLASS="TableLightDesc">Used for computing new view<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP361.HTM" TARGET="CNTFRAME">joining</A></TD>
+<TD CLASS="TableLightDesc">Members joined but for which no view has been yet<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP362.HTM" TARGET="CNTFRAME">view_id</A></TD>
+<TD CLASS="TableLightDesc">ViewID for current view<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP364.HTM" TARGET="CNTFRAME">ltime</A></TD>
+<TD CLASS="TableLightDesc">Lamport logical time<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP365.HTM" TARGET="CNTFRAME">join_timeout</A></TD>
+<TD CLASS="TableLightDesc">Interval to wait for repsonse to Join<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP366.HTM" TARGET="CNTFRAME">join_retry_timeout</A></TD>
+<TD CLASS="TableLightDesc">Interval to wait before retrying a failed Join<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP367.HTM" TARGET="CNTFRAME">leave_timeout</A></TD>
+<TD CLASS="TableLightDesc">Interval to wait for response to leave<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP368.HTM" TARGET="CNTFRAME">digest_timeout</A></TD>
+<TD CLASS="TableLightDesc">Interval to wait for a response to digest request<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP369.HTM" TARGET="CNTFRAME">impl_mutex</A></TD>
+<TD CLASS="TableLightDesc">Synchronizes event entry into impl<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP370.HTM" TARGET="CNTFRAME">digest_mutex</A></TD>
+<TD CLASS="TableLightDesc">synchronizes the GET_DIGEST/GET_DIGEST_OK events<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP371.HTM" TARGET="CNTFRAME">digest</A></TD>
+<TD CLASS="TableLightDesc">Holds result of last computed digest<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP372.HTM" TARGET="CNTFRAME">impls</A></TD>
+<TD CLASS="TableLightDesc">Collection of Implentations<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP373.HTM" TARGET="CNTFRAME">shun</A></TD>
+<TD CLASS="TableLightDesc">If true then the GMS will leave if not in a new View<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP374.HTM" TARGET="CNTFRAME">print_local_addr</A></TD>
+<TD CLASS="TableLightDesc">Displays the local address when retreived<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP375.HTM" TARGET="CNTFRAME">disable_initial_coord</A></TD>
+<TD CLASS="TableLightDesc">Forces the a join to run continuously until a coodinator is found<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP376.HTM" TARGET="CNTFRAME">CLIENT</A></TD>
+<TD CLASS="TableLightDesc">Client implementation string<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP377.HTM" TARGET="CNTFRAME">COORD</A></TD>
+<TD CLASS="TableLightDesc">Coordinator implementation string<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP378.HTM" TARGET="CNTFRAME">PART</A></TD>
+<TD CLASS="TableLightDesc">Participant implementation string<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP379.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">Used to run tasks<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP380.HTM" TARGET="CNTFRAME">GMS</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP381.HTM" TARGET="CNTFRAME">getName</A></TD>
+<TD CLASS="TableLightDesc">
+Returns unique <c>Protocol</c> name
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP382.HTM" TARGET="CNTFRAME">requiredDownServices</A></TD>
+<TD CLASS="TableLightDesc">
+Required services that must be below this <c>Protocol</c>
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP383.HTM" TARGET="CNTFRAME">setImpl</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the current GMS implementation
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP384.HTM" TARGET="CNTFRAME">getImpl</A></TD>
+<TD CLASS="TableLightDesc">
+Gets the current GMS implementation
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP385.HTM" TARGET="CNTFRAME">init</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the TimeScheduler to the instance in the ProtocolSinkStack and
+initialises the GMS implementation if possible.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP386.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Starts the GMS implementation.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP387.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stops the GMS implementation.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP388.HTM" TARGET="CNTFRAME">becomeCoordinator</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the GMS implementation to a coordinator
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP389.HTM" TARGET="CNTFRAME">becomeParticipant</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the GMS implementation to a participant
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP390.HTM" TARGET="CNTFRAME">becomeClient</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the GMS implementation to a client
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP391.HTM" TARGET="CNTFRAME">haveCoordinatorRole</A></TD>
+<TD CLASS="TableLightDesc">
+Checks if GMS implementation is a coordinator
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP392.HTM" TARGET="CNTFRAME">getNextView</A></TD>
+<TD CLASS="TableLightDesc">
+Computes the next view, removes old and suspected members, adds new members.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP393.HTM" TARGET="CNTFRAME">castViewChange</A></TD>
+<TD CLASS="TableLightDesc">
+Calcualates and multicasts a new view.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP394.HTM" TARGET="CNTFRAME">castViewChange</A></TD>
+<TD CLASS="TableLightDesc">
+Calls <c>castViewChange(View,Digest), with a null Digest</c>
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP395.HTM" TARGET="CNTFRAME">castViewChange</A></TD>
+<TD CLASS="TableLightDesc">
+Multicasts a new view.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP396.HTM" TARGET="CNTFRAME">installView</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the new view and sends a VIEW_CHANGE event up and down the stack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP397.HTM" TARGET="CNTFRAME">installView</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the new view and sends a VIEW_CHANGE event up and down the stack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP398.HTM" TARGET="CNTFRAME">determineCoordinator</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the coordinator of the group (i.e. the first memeber).
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP399.HTM" TARGET="CNTFRAME">wouldBeNewCoordinator</A></TD>
+<TD CLASS="TableLightDesc">
+Checks whether the potential coordinator would be the new coordinator
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP400.HTM" TARGET="CNTFRAME">checkSelfInclusion</A></TD>
+<TD CLASS="TableLightDesc">
+Checks whether this member is a member of the group.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP401.HTM" TARGET="CNTFRAME">setDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Send down a SET_DIGEST event 
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP402.HTM" TARGET="CNTFRAME">mergeDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Send down a MERGE_DIGEST event
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP403.HTM" TARGET="CNTFRAME">getDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Send down a GET_DIGEST event, and wait for a response (GET_DIGEST_OK)
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP404.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> travelling up the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP405.HTM" TARGET="CNTFRAME">receiveUpEvent</A></TD>
+<TD CLASS="TableLightDesc">
+Intercepts GET_DIGEST_OK Events
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP406.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP407.HTM" TARGET="CNTFRAME">setProperties</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the properties specified in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP408.HTM" TARGET="CNTFRAME">initState</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the current GMS implementation to Client and resets the viewID
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP409.HTM" TARGET="CNTFRAME">handleJoinRequest</A></TD>
+<TD CLASS="TableLightDesc">
+Deals with incoming join requests. If we are a coordinator then a response will be sent.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP410.HTM" TARGET="CNTFRAME">sendLeaveResponse</A></TD>
+<TD CLASS="TableLightDesc">
+Acknowledges leave response.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP411.HTM" TARGET="CNTFRAME">printMembers</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a String represention and the members in the membership
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Handles joins/leaves/crashes (suspicions) and emits new views accordingly.
+<P>
+</DIV>
+</BODY>
+</HTML>

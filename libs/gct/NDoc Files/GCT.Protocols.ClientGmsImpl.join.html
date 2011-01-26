@@ -1,0 +1,13 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>ClientGmsImpl.join Method</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">ClientGmsImpl.join Method </h1></div></div><div id="nstext"><p>
+            Joins this process to a group.
+            </p><div class="syntax">public override <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemVoidClassTopic.htm">void</a> join(<br>   <a href="GCT.Address.html">Address</a> <i>mbr</i><br>);</div><h4 class="dtH4">Parameters</h4><dl><dt><i>mbr</i></dt><dd>The local Address of the process</dd></dl><h4 class="dtH4">Remarks</h4>
+            Determines the coordinator and sends a unicast 
+            handleJoin() message to it. The coordinator returns a JoinRsp and then broadcasts the new view, which
+            contains a message digest and the current membership (including the joiner). The joiner is then
+            supposed to install the new view and the digest and starts accepting mcast messages. Previous
+            mcast messages were discarded as we were not a member.<p>
+            If successful, impl is changed to an instance of ParticipantGmsImpl. 
+            Otherwise, we continue trying to send join() messages to the coordinator, 
+            until we succeed (or there is no member in the group. In this case, we create our own singleton group).
+            <p>When GMS.disable_initial_coord is set to true, then we won't become coordinator on receiving an initial
+            membership of 0, but instead will retry (forever) until we get an initial membership of &gt; 0.</p></p><h4 class="dtH4">See Also</h4><p><a href="GCT.Protocols.ClientGmsImpl.html">ClientGmsImpl Class</a> | <a href="GCT.Protocols.ClientGmsImplMembers.html">ClientGmsImpl Members</a> | <a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="join method"><param name="Keyword" value="join method, ClientGmsImpl class"><param name="Keyword" value="ClientGmsImpl.join method"></object></div></body></html>

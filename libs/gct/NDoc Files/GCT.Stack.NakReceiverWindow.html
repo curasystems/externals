@@ -1,0 +1,15 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>NakReceiverWindow Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">NakReceiverWindow Class</h1></div></div><div id="nstext">
+            Negative Acknowledgement receiver window. Detects gaps and request retransmission.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.Stack.NakReceiverWindowMembers.html">NakReceiverWindow Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <b>NakReceiverWindow</b></p><div class="syntax"><div>public class NakReceiverWindow</div></div><h4 class="dtH4">Remarks</h4><p>
+            Keeps track of messages according to their sequence numbers. Allows
+            messages to be added out of order, and with gaps between sequence numbers.
+            Method <pre class="code">remove()</pre> removes the first message with a sequence
+            number that is 1 higher than <pre class="code">next_to_remove</pre> (this variable is
+            then incremented), or it returns null if no message is present, or if no
+            message's sequence number is 1 higher.
+            <p>
+            When there is a gap upon adding a message, its seqno will be added to the 
+            Retransmitter, which (using a timer) requests retransmissions of missing
+            messages and keeps on trying until the message has been received, or the
+            member who sent the message is suspected.
+            </p></p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.Stack.html">GCT.Stack Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.Stack.NakReceiverWindowMembers.html">NakReceiverWindow Members</a> | <a href="GCT.Stack.html">GCT.Stack Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="NakReceiverWindow class, about NakReceiverWindow class"></object></div></body></html>

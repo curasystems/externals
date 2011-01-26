@@ -1,0 +1,24 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>GCT.Stack</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">GCT.Stack Namespace</h1></div></div><div id="nstext"><p>This namespace holds all the classes and interfaces required to construct and configure the protocol stack</p><h3 class="dtH3">Classes</h3><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Class</th><th width="50%">Description</th></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.AckReceiverWindow.html">AckReceiverWindow</a></td><td width="50%">
+            Stores messages that have been received and acknowledged.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.AckSenderWindow.html">AckSenderWindow</a></td><td width="50%">
+            ACK-based sliding window for a sender.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.AckSenderWindow.Entry.html">AckSenderWindow.Entry</a></td><td width="50%">
+            Class used to store message alongside with its seqno in the message queue
+            </td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.Configurator.html">Configurator</a></td><td width="50%">
+            Sets up ProtocolSinkStack based on configuration string.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.NakReceiverWindow.html">NakReceiverWindow</a></td><td width="50%">
+            Negative Acknowledgement receiver window. Detects gaps and request retransmission.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.Protocol.html">Protocol</a></td><td width="50%">
+            Base class for all Protocol layers.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.ProtocolSinkStack.html">ProtocolSinkStack</a></td><td width="50%">
+            Representation of stack of Protocols
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.Retransmitter.html">Retransmitter</a></td><td width="50%">
+            Maintains a pool of sequence numbers of messages that need to be retransmitted.
+            <p><b>Author:</b> Chris Koiak, Bela Ban, John Giorgiadis</p><p><b>Date:</b>  12/03/2003</p></td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.StackHeader.html">StackHeader</a></td><td width="50%">
+             ProtocolSinkStack Header
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p></td></tr></table></div><h3 class="dtH3">Interfaces</h3><div class="tablediv"><table class="dtTABLE" cellspacing="0"><tr valign="top"><th width="50%">Interface</th><th width="50%">Description</th></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.AckSenderWindow.RetransmitCommand.html">AckSenderWindow.RetransmitCommand</a></td><td width="50%">
+            Called when the a message should be re-sent. Should be implemented by
+            the Protocol using AckSenderWindow.
+            </td></tr><tr valign="top"><td width="50%"><a href="GCT.Stack.Retransmitter.RetransmitCommand.html">Retransmitter.RetransmitCommand</a></td><td width="50%">
+            Retransmit command used to retrieve missing messages
+            </td></tr></table></div></div></body></html>

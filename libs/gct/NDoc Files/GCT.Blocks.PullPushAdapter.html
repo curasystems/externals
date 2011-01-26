@@ -1,0 +1,15 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>PullPushAdapter Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">PullPushAdapter Class</h1></div></div><div id="nstext">
+            Allows a client of <em>Channel</em> to be notified when messages have been received
+            instead of having to actively poll the channel for new messages.
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.Blocks.PullPushAdapterMembers.html">PullPushAdapter Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <b>PullPushAdapter</b></p><div class="syntax"><div>public class PullPushAdapter</div></div><h4 class="dtH4">Remarks</h4><p>
+            Typically used in the client role (receive()). As this class does not implement interface 
+            <pre class="code">Transport</pre>, but <b>uses</b> it for receiving messages, an underlying object
+            has to be used to send messages (e.g. the channel on which an object of this class relies).
+            <p>
+            Multiple MembershipListeners can register with the PullPushAdapter; when a view is received, they
+            will all be notified. There is one main message listener which sends and receives message. In addition,
+            MessageListeners can register with a certain tag (identifier), and then send messages tagged with this
+            identifier. When a message with such an identifier is received, the corresponding MessageListener will be
+            looked up and the message dispatched to it. If no tag is found (default), the main MessageListener will
+            receive the message.
+            </p></p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.Blocks.html">GCT.Blocks Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.Blocks.PullPushAdapterMembers.html">PullPushAdapter Members</a> | <a href="GCT.Blocks.html">GCT.Blocks Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="PullPushAdapter class, about PullPushAdapter class"></object></div></body></html>

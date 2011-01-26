@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic Chat", "Basic Chat\Basic Chat.csproj", "{E109EBEE-0BEA-41B7-A63B-379EF5CBBF7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCT", "GCT\GCT.csproj", "{05B496F4-4822-4AD1-BA75-C0D6BCD3428D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{66DD66E4-ACE3-4B77-9A12-88DC0656AF0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distributed Hashtable Test", "Distributed Hashtable Test\Distributed Hashtable Test.csproj", "{32447CBC-9AE6-4566-8800-370E5C6C0ABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group Remoting", "Group Remoting\Group Remoting.csproj", "{78E24EB7-80F7-4809-8448-80F14C76689F}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E109EBEE-0BEA-41B7-A63B-379EF5CBBF7C}.Debug.ActiveCfg = Release|.NET
+		{E109EBEE-0BEA-41B7-A63B-379EF5CBBF7C}.Debug.Build.0 = Release|.NET
+		{E109EBEE-0BEA-41B7-A63B-379EF5CBBF7C}.Release.ActiveCfg = Release|.NET
+		{E109EBEE-0BEA-41B7-A63B-379EF5CBBF7C}.Release.Build.0 = Release|.NET
+		{05B496F4-4822-4AD1-BA75-C0D6BCD3428D}.Debug.ActiveCfg = Release|.NET
+		{05B496F4-4822-4AD1-BA75-C0D6BCD3428D}.Debug.Build.0 = Release|.NET
+		{05B496F4-4822-4AD1-BA75-C0D6BCD3428D}.Release.ActiveCfg = Release|.NET
+		{05B496F4-4822-4AD1-BA75-C0D6BCD3428D}.Release.Build.0 = Release|.NET
+		{66DD66E4-ACE3-4B77-9A12-88DC0656AF0B}.Debug.ActiveCfg = Release|.NET
+		{66DD66E4-ACE3-4B77-9A12-88DC0656AF0B}.Debug.Build.0 = Release|.NET
+		{66DD66E4-ACE3-4B77-9A12-88DC0656AF0B}.Release.ActiveCfg = Release|.NET
+		{66DD66E4-ACE3-4B77-9A12-88DC0656AF0B}.Release.Build.0 = Release|.NET
+		{32447CBC-9AE6-4566-8800-370E5C6C0ABA}.Debug.ActiveCfg = Release|.NET
+		{32447CBC-9AE6-4566-8800-370E5C6C0ABA}.Debug.Build.0 = Release|.NET
+		{32447CBC-9AE6-4566-8800-370E5C6C0ABA}.Release.ActiveCfg = Release|.NET
+		{32447CBC-9AE6-4566-8800-370E5C6C0ABA}.Release.Build.0 = Release|.NET
+		{78E24EB7-80F7-4809-8448-80F14C76689F}.Debug.ActiveCfg = Debug|.NET
+		{78E24EB7-80F7-4809-8448-80F14C76689F}.Debug.Build.0 = Debug|.NET
+		{78E24EB7-80F7-4809-8448-80F14C76689F}.Release.ActiveCfg = Release|.NET
+		{78E24EB7-80F7-4809-8448-80F14C76689F}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Group Communication">
+</Property><Property Name="Solution File" Value="M:\externals.git\libs\gct\FullSolution\Group Communication.sln">
+</Property><Property Name="Date" Value="Mittwoch, 26. Januar 2011">
+</Property><Property Name="Time" Value="11:52">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Group Communication.sln" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Communication.sln">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj" Description="Project file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\Basic Chat.csproj">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj.user" Description="Project user file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\Basic Chat.csproj.user">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\AssemblyInfo.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Chat.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\Chat.cs">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\App.ico" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\App.ico">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Chat.resx" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Basic Chat\Chat.resx">
+</Event><Event ErrorLevel="1" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GCT.csproj" Description="Project file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GCT.csproj">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GCT.csproj.user" Description="Project user file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GCT.csproj.user">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\AckReceiverWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\AckReceiverWindow.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\AckSenderWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\AckSenderWindow.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Address.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Address.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\AssemblyInfo.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\CAUSAL.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\CAUSAL.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\CausalHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\CausalHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Channel.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Channel.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\ChannelListener.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\ChannelListener.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\ClientGmsImpl.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\ClientGmsImpl.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Configurator.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Configurator.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\CoordGmsImpl.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\CoordGmsImpl.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Digest.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Digest.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\DISCARD.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\DISCARD.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\DistributedHashtable.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\DistributedHashtable.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Event.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Event.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Exceptions.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Exceptions.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\FD.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\FD.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\FDHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\FDHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GMS.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GMS.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GmsHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GmsHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GmsImpl.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GmsImpl.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GroupChannel.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GroupChannel.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GroupChannelHelper.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\GroupChannelHelper.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Header.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Header.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\JoinRsp.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\JoinRsp.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Membership.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Membership.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\MembershipListener.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\MembershipListener.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Message.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Message.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\MessageListener.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\MessageListener.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\MQueue.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\MQueue.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\NAKACK.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\NAKACK.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\NakackHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\NakackHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\NakReceiverWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\NakReceiverWindow.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\ParticipantGmsImpl.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\ParticipantGmsImpl.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\PING.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\PING.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\PINGHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\PINGHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\PingRsp.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\PingRsp.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Promise.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Promise.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Protocol.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Protocol.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\ProtocolSinkStack.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\ProtocolSinkStack.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\PullHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\PullHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\PullPushAdapter.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\PullPushAdapter.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Range.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Range.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\RemotingRespChooser.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\RemotingRespChooser.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Retransmitter.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Retransmitter.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\RWlock.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\RWlock.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\STABLE.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\STABLE.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\StableHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\StableHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\StackHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\StackHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\TimeChooser.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\TimeChooser.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\TimeScheduler.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\TimeScheduler.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Trace.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Trace.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\Transport.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\Transport.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\TransportableVectorTimeStamp.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\TransportableVectorTimeStamp.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\UDP.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\UDP.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\UDPHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\UDPHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\UNICAST.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\UNICAST.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\UnicastHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\UnicastHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\UpHandler.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\UpHandler.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\VectorTimeStamp.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\VectorTimeStamp.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\VerifyHeader.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\VerifyHeader.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\VERIFY_SUSPECT.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\VERIFY_SUSPECT.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\View.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\View.cs">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\ViewId.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\GCT\ViewId.cs">
+</Event><Event ErrorLevel="1" Project="GCT" Source="GCT\GCT.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GCT.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GCT" Source="GCT\GCT.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Testing.csproj" Description="Project file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\Testing.csproj">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Testing.csproj.user" Description="Project user file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\Testing.csproj.user">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\AssemblyInfo.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\BOTTOM.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\BOTTOM.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\CausalTest.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\CausalTest.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Efficency.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\Efficency.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\HOLD.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\HOLD.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\OtherTests.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\OtherTests.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\RandomTester.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\RandomTester.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestAckReceiverWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestAckReceiverWindow.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestAckSenderWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestAckSenderWindow.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Tester.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\Tester.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestMQueue.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestMQueue.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestNAKACK.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestNAKACK.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestNakReceiverWindow.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestNakReceiverWindow.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestProtocols.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestProtocols.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TestUNICAST.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TestUNICAST.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TimerTask.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TimerTask.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\TOP.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\TOP.cs">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\App.ico" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Testing\App.ico">
+</Event><Event ErrorLevel="1" Project="Testing" Source="Testing\Testing.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Testing.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Testing" Source="Testing\Testing.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj" Description="Project file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\Distributed Hashtable Test.csproj">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj.user" Description="Project user file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\Distributed Hashtable Test.csproj.user">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\AssemblyInfo.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\DistributedHTTester.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\DistributedHTTester.cs">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\App.ico" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\App.ico">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\DistributedHTTester.resx" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Distributed Hashtable Test\DistributedHTTester.resx">
+</Event><Event ErrorLevel="1" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj" Description="Project file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\Group Remoting.csproj">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj.user" Description="Project user file successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\Group Remoting.csproj.user">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\AssemblyInfo.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\RemotingTest.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\RemotingTest.cs">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\TimeServer.cs" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\TimeServer.cs">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\App.ico" Description="File successfully backed up as M:\externals.git\libs\gct\FullSolution\Backup\Group Remoting\App.ico">
+</Event><Event ErrorLevel="1" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Group Communication.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Group Communication.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Basic Chat" Source="Basic Chat\Basic Chat.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GCT" Source="GCT\GCT.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Testing" Source="Testing\Testing.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Distributed Hashtable Test" Source="Distributed Hashtable Test\Distributed Hashtable Test.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Group Remoting" Source="Group Remoting\Group Remoting.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

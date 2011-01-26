@@ -1,0 +1,16 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>STABLE Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">STABLE Class</h1></div></div><div id="nstext">
+            Protocol : STABLE computes the broadcast messages that are stable
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.Protocols.STABLEMembers.html">STABLE Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <a href="GCT.Stack.Protocol.html">Protocol</a><br>      <b>STABLE</b></p><div class="syntax"><div>public class STABLE : Protocol</div></div><h4 class="dtH4">Remarks</h4>
+            Computes the broadcast messages that are stable, i.e. have been received by all members. Sends
+            STABLE events up the stack when this is the case. This allows NAKACK to garbage collect messages that
+            have been seen by all members.
+            <p>
+            Works as follows: periodically we mcast our highest seqnos (seen for each member) to the group.
+            A stability vector, which maintains the highest seqno for each member and initially contains no data,
+            is updated when such a message is received. The entry for a member P is computed set to 
+            min(entry[P], digest[P]). When messages from all members have been received, a stability
+            message is mcast, which causes all members to send a STABLE event up the stack (triggering garbage collection
+            in the NAKACK layer).</p><p>
+            The stable task now terminates after max_num_gossips if no messages or view changes have been sent or received
+            in the meantime. It will resume when messages are received. This effectively suspends sending superfluous
+            STABLE messages in the face of no activity.</p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.Protocols.STABLEMembers.html">STABLE Members</a> | <a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="STABLE class, about STABLE class"></object></div></body></html>

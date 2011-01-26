@@ -1,0 +1,17 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>FD Class</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">GCT Class Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">FD Class</h1></div></div><div id="nstext">
+            Protocol: Failure Detection based on simple heartbeat protocol
+            <p><b>Author:</b> Chris Koiak, Bela Ban</p><p><b>Date:</b>  12/03/2003</p><p>For a list of all members of this type, see <a href="GCT.Protocols.FDMembers.html">FD Members</a>.</p><p><a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a><br>   <a href="GCT.Stack.Protocol.html">Protocol</a><br>      <b>FD</b></p><div class="syntax"><div>public class FD : Protocol</div></div><h4 class="dtH4">Remarks</h4>
+            Regularly polls members for
+            liveness. Passes SUSPECT message up the stack when a member is not reachable. The simple
+            algorithms works as follows: the membership is known and ordered. Each HB protocol
+            periodically sends a 'are-you-alive' message to its *neighbor*. A neighbor is the next in
+            rank in the membership list. It is recomputed upon a view change. When a response hasn't
+            been received for n milliseconds and m tries, the corresponding member is suspected (and
+            eventually excluded if faulty).<p>
+            FD starts when it detects (in a view change notification) that there are at least
+            2 members in the group. It stops running when the membership drops below 2.</p><p>
+            When a message is received from the monitored neighbor member, it causes the pinger thread to
+            'skip' sending the next are-you-alive message. Thus, traffic is reduced.</p><p>
+            When we receive a ping from a member that's not in the membership list, we shun it by sending it a
+            NOT_MEMBER message. That member will then leave the group (and possibly rejoin). This is only done if
+            <pre class="code">shun</pre> is true.</p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><p><b>Assembly: </b>GCT.dll</p><h4 class="dtH4">See Also</h4><p><a href="GCT.Protocols.FDMembers.html">FD Members</a> | <a href="GCT.Protocols.html">GCT.Protocols Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="viewastext"><param name="Keyword" value="FD class, about FD class"></object></div></body></html>

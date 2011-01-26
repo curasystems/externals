@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.ParticipantGmsImpl.wouldIBeCoordinator</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.ParticipantGmsImpl.wouldIBeCoordinator Function</DIV>
+<DIV CLASS="Description">
+
+Returns true if this process should become the coordinator
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Private bool wouldIBeCoordinator ()</SPAN></DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Return</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc">bool</TD>
+<TD CLASS="TableLightDesc">True if this process should become the coordinator<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Determines whether this member is the new coordinator given a list of suspected members.  This is
+computed as follows: the list of currently suspected members (suspected_mbrs) is removed from the current
+membership. If the first member of the resulting list is equals to the local_addr, then it is true,
+otherwise false. Example: own address is B, current membership is {A, B, C, D}, suspected members are 
+{A,D}. The resulting list is {B, C}. The first member of {B, C} is B, which is equal to the
+local_addr. Therefore, true is returned.
+<P>
+</DIV>
+</BODY>
+</HTML>

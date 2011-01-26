@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Stack.Configurator</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Stack.Configurator Class</DIV>
+<DIV CLASS="Description">
+
+Sets up ProtocolSinkStack based on configuration string.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP136.HTM" TARGET="CNTFRAME">setupStack</A></TD>
+<TD CLASS="TableLightDesc">
+Sets up the <c>ProtocolSinkStack</c> with the specified configuration string.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP138.HTM" TARGET="CNTFRAME">parseConfigurations</A></TD>
+<TD CLASS="TableLightDesc">
+Creates a <c>ProtocolConfiguration</c> instance for each protocol in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP140.HTM" TARGET="CNTFRAME">createProtocols</A></TD>
+<TD CLASS="TableLightDesc">
+Creates an array of <c>Protocols</c> from the configurations
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP141.HTM" TARGET="CNTFRAME">sanityCheck</A></TD>
+<TD CLASS="TableLightDesc">
+Checks all <c>Protocol</c>s are unique and that 
+each required up/down service is provided
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP142.HTM" TARGET="CNTFRAME">providesUpServices</A></TD>
+<TD CLASS="TableLightDesc">
+Check whether any of the protocols 'below' end_index provide <c>Event</c> (evt_type)
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP143.HTM" TARGET="CNTFRAME">providesDownServices</A></TD>
+<TD CLASS="TableLightDesc">
+Check whether any of the protocols 'above' end_index provide <c>Event</c> (evt_type)
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP144.HTM" TARGET="CNTFRAME">connectProtocols</A></TD>
+<TD CLASS="TableLightDesc">
+Connects all the <c>Protocols</c> together.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP145.HTM" TARGET="CNTFRAME">getBottommostProtocol</A></TD>
+<TD CLASS="TableLightDesc">
+Moves down the stack until the last <c>Protocol</c> is discovered
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP146.HTM" TARGET="CNTFRAME">startProtocolStack</A></TD>
+<TD CLASS="TableLightDesc">
+Starts the Up and Down Handler threads in every Protocol.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP147.HTM" TARGET="CNTFRAME">stopProtocolStack</A></TD>
+<TD CLASS="TableLightDesc">
+Stops all <c>Protocol</c> Up and Down Handler threads.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP148.HTM" TARGET="CNTFRAME">ProtocolReq</A></TD>
+<TD CLASS="TableLightDesc">
+Internal Class for holding a Protocols required and provided services
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP139.HTM" TARGET="CNTFRAME">ProtocolConfiguration</A></TD>
+<TD CLASS="TableLightDesc">
+Internal Class that holds the Configuration for a Protocol
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+This class is responsible for creating instances of the protocol layers
+from the textual configuration string. 
+Once the layers are created, they will be configured.
+<P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,373 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.NAKACK</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.NAKACK Class</DIV>
+<DIV CLASS="Description">
+
+Protocol: Multicast Negative AcKnowledgement layer (NAK)
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Protocol</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Implemented interfaces:  </SPAN>RetransmitCommand</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP596.HTM" TARGET="CNTFRAME">retransmit_timeout</A></TD>
+<TD CLASS="TableLightDesc">Interval to wait before requesting retransmission<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP597.HTM" TARGET="CNTFRAME">is_server</A></TD>
+<TD CLASS="TableLightDesc">If set, process is a member of a group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP598.HTM" TARGET="CNTFRAME">local_addr</A></TD>
+<TD CLASS="TableLightDesc">Local <c>Address</c><P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP599.HTM" TARGET="CNTFRAME">members</A></TD>
+<TD CLASS="TableLightDesc">Current members in the group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP600.HTM" TARGET="CNTFRAME">seqno</A></TD>
+<TD CLASS="TableLightDesc">Current message sequence number (starts with 0)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP601.HTM" TARGET="CNTFRAME">deleted_up_to</A></TD>
+<TD CLASS="TableLightDesc">Keeps track of lowest sequence number garbage collected<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP602.HTM" TARGET="CNTFRAME">max_xmit_size</A></TD>
+<TD CLASS="TableLightDesc">Maximum size of a retransmit message<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP603.HTM" TARGET="CNTFRAME">gc_lag</A></TD>
+<TD CLASS="TableLightDesc">Number of msgs garbage collection lags behind<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP604.HTM" TARGET="CNTFRAME">received_msgs</A></TD>
+<TD CLASS="TableLightDesc">Holds senders and their associated NakReceiverWindows<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP605.HTM" TARGET="CNTFRAME">sent_msgs</A></TD>
+<TD CLASS="TableLightDesc">Holds sent message sequence numbers and the associated message<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP606.HTM" TARGET="CNTFRAME">leaving</A></TD>
+<TD CLASS="TableLightDesc">If set then currently disconnecting from the group<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP607.HTM" TARGET="CNTFRAME">timer</A></TD>
+<TD CLASS="TableLightDesc">Used for running tasks.<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP608.HTM" TARGET="CNTFRAME">NAKACK</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP609.HTM" TARGET="CNTFRAME">getName</A></TD>
+<TD CLASS="TableLightDesc">
+Returns unique <c>Protocol</c> name
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP610.HTM" TARGET="CNTFRAME">providedUpServices</A></TD>
+<TD CLASS="TableLightDesc">
+Provided services for layers below NAKACK
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP611.HTM" TARGET="CNTFRAME">providedDownServices</A></TD>
+<TD CLASS="TableLightDesc">
+Provided services for layers above NAKACK
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP612.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Uses TimeScheduler from ProtocolSinkStack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP613.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stops any running tasks
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP614.HTM" TARGET="CNTFRAME">down</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> traveling down the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP615.HTM" TARGET="CNTFRAME">up</A></TD>
+<TD CLASS="TableLightDesc">
+Processes <c>Events</c> travelling up the stack
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP616.HTM" TARGET="CNTFRAME">setProperties</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the properties specified in the configuration string
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP617.HTM" TARGET="CNTFRAME">getNextSeqno</A></TD>
+<TD CLASS="TableLightDesc">
+Increments and returns the current sequence number
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP618.HTM" TARGET="CNTFRAME">send</A></TD>
+<TD CLASS="TableLightDesc">
+Adds the message to the sent_msgs table and then passes it down the stack.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP619.HTM" TARGET="CNTFRAME">handleMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Results in all possible messages from sender being delivered up the stacks
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP621.HTM" TARGET="CNTFRAME">handleXmitReq</A></TD>
+<TD CLASS="TableLightDesc">
+Retransmits all the missing messages.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP622.HTM" TARGET="CNTFRAME">sendXmitRsp</A></TD>
+<TD CLASS="TableLightDesc">
+Sends a XMIT_RSP message
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP623.HTM" TARGET="CNTFRAME">handleXmitRsp</A></TD>
+<TD CLASS="TableLightDesc">
+Delivers all received messages from XMIT_RSP 
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP624.HTM" TARGET="CNTFRAME">adjustReceivers</A></TD>
+<TD CLASS="TableLightDesc">
+Removes all old members and creates NakReceiverWindows for all new members
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP625.HTM" TARGET="CNTFRAME">getDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a message digest
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP626.HTM" TARGET="CNTFRAME">getDigestHighestDeliveredMsgs</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a message digest.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP627.HTM" TARGET="CNTFRAME">setDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Installs new NakReceiverWindows with the values specified in the Digest.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP628.HTM" TARGET="CNTFRAME">mergeDigest</A></TD>
+<TD CLASS="TableLightDesc">
+Merges two digests together
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP629.HTM" TARGET="CNTFRAME">getLowestAndHighestSeqno</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the Digest range for a sender
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP631.HTM" TARGET="CNTFRAME">getHighSeqnoSeen</A></TD>
+<TD CLASS="TableLightDesc">
+Returns the highest seqno seen from sender. 
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP632.HTM" TARGET="CNTFRAME">stable</A></TD>
+<TD CLASS="TableLightDesc">
+Garbage collect messages that have been seen by all members.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP633.HTM" TARGET="CNTFRAME">retransmit</A></TD>
+<TD CLASS="TableLightDesc">
+Implementation of Retransmitter.RetransmitCommand, sends XMIT_REQ to originator of message
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP634.HTM" TARGET="CNTFRAME">clear</A></TD>
+<TD CLASS="TableLightDesc">
+Resets NAKACK and resets the NakReceiverWindow of each sender
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP635.HTM" TARGET="CNTFRAME">removeAll</A></TD>
+<TD CLASS="TableLightDesc">
+Resets NAKACK and destorys the NakReceiverWindow of each sender
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP636.HTM" TARGET="CNTFRAME">printSentMsgs</A></TD>
+<TD CLASS="TableLightDesc">
+Returns a string representation of the sent messages.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Messages are assigned a monotonically increasing sequence number (seqno).
+Receivers deliver messages ordered according to seqno and request retransmission of missing messages. Retransmitted
+messages are bundled into bigger ones, e.g. when getting an xmit request for messages 1-10, instead of sending 10
+unicast messages, we bundle all 10 messages into 1 and send it. 
+We only bundle messages up to max_xmit_size bytes to prevent too large messages. For example, if the bundled message
+size was a total of 34000 bytes, and max_xmit_size=16000, we'd send 3 messages: 2 16K and a 2K message.
+<P>
+</DIV>
+</BODY>
+</HTML>

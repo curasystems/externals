@@ -1,0 +1,243 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Stack.AckSenderWindow</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Stack.AckSenderWindow Class</DIV>
+<DIV CLASS="Description">
+
+ACK-based sliding window for a sender.
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Implemented interfaces:  </SPAN>RetransmitCommand</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP14.HTM" TARGET="CNTFRAME">retransmit_command</A></TD>
+<TD CLASS="TableLightDesc">Called to request XMIT of message<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP16.HTM" TARGET="CNTFRAME">msgs</A></TD>
+<TD CLASS="TableLightDesc">Collection of sent messages.<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP17.HTM" TARGET="CNTFRAME">interval</A></TD>
+<TD CLASS="TableLightDesc">Intervals to wait between sending<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP18.HTM" TARGET="CNTFRAME">retransmitter</A></TD>
+<TD CLASS="TableLightDesc">Sends retransmit requests<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP20.HTM" TARGET="CNTFRAME">msg_queue</A></TD>
+<TD CLASS="TableLightDesc">Stores messages is msgs is 'full'<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP22.HTM" TARGET="CNTFRAME">window_size</A></TD>
+<TD CLASS="TableLightDesc">The max number of messages in the window, when exceeded messages will be queued<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP23.HTM" TARGET="CNTFRAME">min_threshold</A></TD>
+<TD CLASS="TableLightDesc">When queueing, after msgs size falls below this value, msgs are added again (queueing stops)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP24.HTM" TARGET="CNTFRAME">use_sliding_window</A></TD>
+<TD CLASS="TableLightDesc">Enables use of a sliding window<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP25.HTM" TARGET="CNTFRAME">queueing</A></TD>
+<TD CLASS="TableLightDesc">If set there are queued messages<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP26.HTM" TARGET="CNTFRAME">transport</A></TD>
+<TD CLASS="TableLightDesc">Protocol to send messages through<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP28.HTM" TARGET="CNTFRAME">RetransmitCommand</A></TD>
+<TD CLASS="TableLightDesc">
+Called when the a message should be re-sent. Should be implemented by
+the Protocol using AckSenderWindow.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP30.HTM" TARGET="CNTFRAME">AckSenderWindow</A></TD>
+<TD CLASS="TableLightDesc">
+Creates a new instance.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP31.HTM" TARGET="CNTFRAME">AckSenderWindow</A></TD>
+<TD CLASS="TableLightDesc">
+Allows the intervals between retransmission to be specified.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP32.HTM" TARGET="CNTFRAME">AckSenderWindow</A></TD>
+<TD CLASS="TableLightDesc">
+This constructor whould be used when we want AckSenderWindow to send the message added
+by add(), rather then ourselves
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP33.HTM" TARGET="CNTFRAME">setWindowSize</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the size of the sender window
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP34.HTM" TARGET="CNTFRAME">reset</A></TD>
+<TD CLASS="TableLightDesc">
+Clears all the messages in the sender window and resets the retransmitter
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP35.HTM" TARGET="CNTFRAME">add</A></TD>
+<TD CLASS="TableLightDesc">
+Adds a new message to the retransmission table. If the message won't have received an ack within
+a certain time frame, the retransmission thread will retransmit the message to the receiver. If
+a sliding window protocol is used, we only add up to <code>window_size</code> messages. If the table is
+full, we add all new messages to a queue. Those will only be added once the table drains below a certain
+threshold (<code>min_threshold</code>)
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP36.HTM" TARGET="CNTFRAME">ack</A></TD>
+<TD CLASS="TableLightDesc">
+Removes the message from <code>msgs</code>, removing them also from retransmission. If
+sliding window protocol is used, and was queueing, check whether we can resume adding elements.
+Add all elements. If this goes above window_size, stop adding and back to queueing. Else
+set queueing to false.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP37.HTM" TARGET="CNTFRAME">retransmit</A></TD>
+<TD CLASS="TableLightDesc">
+Called by the Retransmitter when a message should be retransmitted.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP39.HTM" TARGET="CNTFRAME">addMessage</A></TD>
+<TD CLASS="TableLightDesc">
+Used internally to add a message to the retransmitter. The message 
+will be passed down the stack by the Protocol using this Object.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP40.HTM" TARGET="CNTFRAME">addToQueue</A></TD>
+<TD CLASS="TableLightDesc">
+
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP41.HTM" TARGET="CNTFRAME">removeFromQueue</A></TD>
+<TD CLASS="TableLightDesc">
+Removes the first <c>Entry</c> in the message collection.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP42.HTM" TARGET="CNTFRAME">Entry</A></TD>
+<TD CLASS="TableLightDesc">
+Class used to store message alongside with its seqno in the message queue
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Messages are added to the window keyed by seqno
+When an ACK is received, the corresponding message is removed. The Retransmitter
+continously iterates over the entries in the hashmap, retransmitting messages based on their
+creation time and an (increasing) timeout. When there are no more messages in the retransmission
+table left, the thread terminates. It will be re-activated when a new entry is added to the
+retransmission table.
+<P>
+</DIV>
+</BODY>
+</HTML>

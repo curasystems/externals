@@ -1,0 +1,211 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Stack.Retransmitter</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Stack.Retransmitter Class</DIV>
+<DIV CLASS="Description">
+
+Maintains a pool of sequence numbers of messages that need to be retransmitted.
+<p><b>Author:</b> Chris Koiak, Bela Ban, John Giorgiadis</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP874.HTM" TARGET="CNTFRAME">RETRANSMIT_TIMEOUTS</A></TD>
+<TD CLASS="TableLightDesc">Default retransmit intervals (ms) - exponential approx.<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP875.HTM" TARGET="CNTFRAME">SUSPEND_TIMEOUT</A></TD>
+<TD CLASS="TableLightDesc">Default retransmit thread suspend timeout (ms).<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP876.HTM" TARGET="CNTFRAME">sender</A></TD>
+<TD CLASS="TableLightDesc">Address of the sender.<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP877.HTM" TARGET="CNTFRAME">msgs</A></TD>
+<TD CLASS="TableLightDesc">List of all messages received<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP878.HTM" TARGET="CNTFRAME">cmd</A></TD>
+<TD CLASS="TableLightDesc">Method called to retransmit<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP879.HTM" TARGET="CNTFRAME">retransmitter_owned</A></TD>
+<TD CLASS="TableLightDesc">Signifys that the Scheduler is owned internally<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP880.HTM" TARGET="CNTFRAME">retransmitter</A></TD>
+<TD CLASS="TableLightDesc"><P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP881.HTM" TARGET="CNTFRAME">RetransmitCommand</A></TD>
+<TD CLASS="TableLightDesc">
+Retransmit command used to retrieve missing messages
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP883.HTM" TARGET="CNTFRAME">Retransmitter</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor: Create a new Retransmitter associated with the given sender address
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP884.HTM" TARGET="CNTFRAME">Retransmitter</A></TD>
+<TD CLASS="TableLightDesc">
+Constructor: Create a new Retransmitter associated with the given sender address
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP885.HTM" TARGET="CNTFRAME">setRetransmitTimeouts</A></TD>
+<TD CLASS="TableLightDesc">
+Sets the retransmission timeouts
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP886.HTM" TARGET="CNTFRAME">add</A></TD>
+<TD CLASS="TableLightDesc">
+Add the given range [first_seqno, last_seqno] in the list of
+entries eligible for retransmission. If first_seqno > last_seqno,
+then the range [last_seqno, first_seqno] is added instead
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP887.HTM" TARGET="CNTFRAME">remove</A></TD>
+<TD CLASS="TableLightDesc">
+Remove the given sequence number from the list of seqnos eligible
+for retransmission. If there are no more seqno intervals in the
+respective entry, cancel the entry from the retransmission
+scheduler and remove it from the pending entries
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP888.HTM" TARGET="CNTFRAME">reset</A></TD>
+<TD CLASS="TableLightDesc">
+Reset the retransmitter: clear all msgs and cancel all the
+respective tasks
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP889.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stop the retransmission and clear all pending msgs.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP890.HTM" TARGET="CNTFRAME">init</A></TD>
+<TD CLASS="TableLightDesc">
+Initialises this object
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP891.HTM" TARGET="CNTFRAME">Task</A></TD>
+<TD CLASS="TableLightDesc">
+The retransmit task executed by the scheduler in regular intervals
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP902.HTM" TARGET="CNTFRAME">Entry</A></TD>
+<TD CLASS="TableLightDesc">
+The entry associated with an initial group of missing messages
+with contiguous sequence numbers and with all its subgroups.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP893.HTM" TARGET="CNTFRAME">Interval</A></TD>
+<TD CLASS="TableLightDesc">
+Contains a series of intervals to wait between transmissions
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Maintains a pool of sequence numbers of messages that need to be retransmitted. Messages
+are aged and retransmission requests sent according to age (linear backoff used). If a
+TimeScheduler instance is given to the constructor, it will be used, otherwise Reransmitter
+will create its own. The retransmit timeouts have to be set first thing after creating an instance.
+The <code>add()</code> method adds a range of sequence numbers of messages to be retransmitted. The
+<code>remove()</code> method removes a sequence number again, cancelling retransmission requests for it.
+Whenever a message needs to be retransmitted, the <code>RetransmitCommand.retransmit()</code> method is called.
+It can be used e.g. by an ack-based scheme (e.g. AckSenderWindow) to retransmit a message to the receiver, or
+by a nak-based scheme to send a retransmission request to the sender of the missing message.
+<P>
+</DIV>
+</BODY>
+</HTML>

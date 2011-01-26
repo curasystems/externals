@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Protocols.GMS.castViewChange</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Protocols.GMS.castViewChange Function</DIV>
+<DIV CLASS="Description">
+
+Calcualates and multicasts a new view.
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Public GCT.View castViewChange (System.Collections.ArrayList, System.Collections.ArrayList, System.Collections.ArrayList)</SPAN></DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" >Type</TD>
+<TD CLASS="TableLightLabel" >Name</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc">System.Collections.ArrayList</TD>
+<TD CLASS="TableLightDesc">new_mbrs</TD>
+<TD CLASS="TableLightDesc">New members to be added to the view</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc">System.Collections.ArrayList</TD>
+<TD CLASS="TableLightDesc">old_mbrs</TD>
+<TD CLASS="TableLightDesc">Old members to be removed from the view</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc">System.Collections.ArrayList</TD>
+<TD CLASS="TableLightDesc">suspected_mbrs</TD>
+<TD CLASS="TableLightDesc">Suspected members to be removed from the view</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Return</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP99.HTM">View</A></TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr"><B>Other overloads:</B><BR></DIV>
+<DIV CLASS="Remarks">
+GCT.Protocols.GMS.castViewChange(View)
+GCT.Protocols.GMS.castViewChange(View,Digest)
+</DIV>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+Compute a new view, given the current view, the new members and the suspected/left
+ members. Then simply mcast the view to all members. This is different to the VS GMS protocol,
+in which we run a FLUSH protocol which tries to achive consensus on the set of messages mcast in
+the current view before proceeding to install the next view.
+The members for the new view are computed as follows:
+			existing          leaving        suspected          joining
+
+1. new_view      y                 n               n                 y
+2. tmp_view      y                 y               n                 y
+(view_dest)
+<p>
+The new view to be installed includes the existing members plus the joining ones and
+excludes the leaving and suspected members.
+</p>
+A temporary view is sent down the stack as an <em>event</em>. This allows the bottom layer
+(e.g. UDP or TCP) to determine the members to which to send a multicast message. Compared
+to the new view, leaving members are <em>included</em> since they have are waiting for a
+view in which they are not members any longer before they leave. So, if we did not set a
+temporary view, joining members would not receive the view (signalling that they have been
+joined successfully). The temporary view is essentially the current view plus the joining
+members (old members are still part of the current view).
+<P>
+</DIV>
+</BODY>
+</HTML>

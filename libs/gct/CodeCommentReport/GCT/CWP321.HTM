@@ -1,0 +1,278 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>GCT.Util.TimeScheduler</TITLE>
+<LINK REL=STYLESHEET HREF="../CommentReport.css" TYPE="text/css">
+</HEAD>
+<BODY topmargin=0 rightmargin=0 leftmargin=0 style="background-image: url(../titletile.jpg); background-repeat:repeat-x; background-position: 0 0;" >
+<DIV CLASS="PageHeading">GCT.Util.TimeScheduler Class</DIV>
+<DIV CLASS="Description">
+
+Fixed-delay and fixed-rate single thread scheduler
+<p><b>Author:</b> Chris Koiak, Bela Ban</p>
+<p><b>Date:</b>  12/03/2003</p>
+<P>
+
+</DIV>
+<IMG src="../GradLeft.jpg" width=7 height=378 alt="" border="0" style="position:absolute; left:10; top:18;z-Index:2">
+<IMG src="../GradTop.jpg" width=352 height=7 alt="" border="0" align="top" style="position:absolute; left:10; top:18; z-index:1">
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Access: </SPAN>Public</DIV>
+<DIV CLASS="Remarks">
+<SPAN CLASS="RemarkHdrX">Base Classes: </SPAN>Object</DIV>
+<TABLE CLASS="InfoTable" cellpadding=0 cellspacing=0>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD valign=top align=left width=9 bgcolor="#cccc66"><IMG SRC="../graycorner.jpg" align=top></TD>
+<TD CLASS="TableLightLabel" WIDTH=206>Members</TD>
+<TD CLASS="TableLightLabel" >Description</TD>
+<TD width=20>&nbsp;</TD>
+</TR>
+<TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1024.HTM" TARGET="CNTFRAME">Task</A></TD>
+<TD CLASS="TableLightDesc">
+The interface that submitted tasks must implement
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1029.HTM" TARGET="CNTFRAME">IntTask</A></TD>
+<TD CLASS="TableLightDesc">
+Internal task class.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1037.HTM" TARGET="CNTFRAME">TaskQueue</A></TD>
+<TD CLASS="TableLightDesc">
+The task queue used by the scheduler. Tasks are ordered in increasing
+order of their next execution time
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1047.HTM" TARGET="CNTFRAME">SUSPEND_INTERVAL</A></TD>
+<TD CLASS="TableLightDesc">Default suspend interval (ms)<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1048.HTM" TARGET="CNTFRAME">TICK_INTERVAL</A></TD>
+<TD CLASS="TableLightDesc">Regular wake-up intervals for scheduler<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1049.HTM" TARGET="CNTFRAME">RUN</A></TD>
+<TD CLASS="TableLightDesc">State Constant<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1050.HTM" TARGET="CNTFRAME">SUSPEND</A></TD>
+<TD CLASS="TableLightDesc">State Constant<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1051.HTM" TARGET="CNTFRAME">STOPPING</A></TD>
+<TD CLASS="TableLightDesc">State Constant<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1052.HTM" TARGET="CNTFRAME">STOP</A></TD>
+<TD CLASS="TableLightDesc">State Constant<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1053.HTM" TARGET="CNTFRAME">THREAD_NAME</A></TD>
+<TD CLASS="TableLightDesc">TimeScheduler thread name<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1054.HTM" TARGET="CNTFRAME">thread</A></TD>
+<TD CLASS="TableLightDesc">The scheduler thread<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1055.HTM" TARGET="CNTFRAME">thread_state</A></TD>
+<TD CLASS="TableLightDesc">The thread's running state<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1047.HTM" TARGET="CNTFRAME">suspend_interval</A></TD>
+<TD CLASS="TableLightDesc">Time that task queue is empty before suspending the scheduling thread<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1056.HTM" TARGET="CNTFRAME">queue</A></TD>
+<TD CLASS="TableLightDesc">The task queue ordered according to task's next execution time<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1057.HTM" TARGET="CNTFRAME">_start</A></TD>
+<TD CLASS="TableLightDesc">
+Set the thread state to running, create and start the thread
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1058.HTM" TARGET="CNTFRAME">_unsuspend</A></TD>
+<TD CLASS="TableLightDesc">
+Restart the suspended thread
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1059.HTM" TARGET="CNTFRAME">_suspend</A></TD>
+<TD CLASS="TableLightDesc">
+Set the thread state to suspended
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1060.HTM" TARGET="CNTFRAME">_stopping</A></TD>
+<TD CLASS="TableLightDesc">
+Set the thread state to stopping
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1061.HTM" TARGET="CNTFRAME">_stop</A></TD>
+<TD CLASS="TableLightDesc">
+Set the thread state to stopped
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1062.HTM" TARGET="CNTFRAME">_run</A></TD>
+<TD CLASS="TableLightDesc">
+If the task queue is empty, sleep until a task comes in or if slept
+for too long, suspend the thread.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1063.HTM" TARGET="CNTFRAME">TimeScheduler</A></TD>
+<TD CLASS="TableLightDesc">
+Create a scheduler that executes tasks in dynamically adjustable
+intervals
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1064.HTM" TARGET="CNTFRAME">TimeScheduler</A></TD>
+<TD CLASS="TableLightDesc">
+Create a scheduler that executes tasks in dynamically adjustable
+intervals
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1065.HTM" TARGET="CNTFRAME">add</A></TD>
+<TD CLASS="TableLightDesc">
+Add a task for execution at adjustable intervals
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1066.HTM" TARGET="CNTFRAME">add</A></TD>
+<TD CLASS="TableLightDesc">
+Add a task for execution at adjustable intervals
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1067.HTM" TARGET="CNTFRAME">start</A></TD>
+<TD CLASS="TableLightDesc">
+Start the scheduler, if it's suspended or stopped
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR><TR height=20>
+<TD width=20>&nbsp;</TD>
+<TD CLASS="TableLightDesc">&nbsp;</TD>
+<TD CLASS="TableLightDesc"><A HREF="CWP1068.HTM" TARGET="CNTFRAME">stop</A></TD>
+<TD CLASS="TableLightDesc">
+Stop the scheduler if it's running. Switch to stopped, if it's
+suspended. Clear the task queue.
+<P>
+</TD>
+<TD width=20>&nbsp;</TD>
+</TR></TABLE>
+<DIV CLASS="RemarkHdr">Remarks:</DIV>
+<DIV CLASS="Remarks">
+
+The scheduler supports varying scheduling intervals by asking the task
+every time for its next preferred scheduling interval. Scheduling can
+either be <i>fixed-delay</i> or <i>fixed-rate</i>. 
+In fixed-delay scheduling, the task's new schedule is calculated
+as:<br></br>
+new_schedule = time_task_starts + scheduling_interval
+<p>
+In fixed-rate scheduling, the next schedule is calculated as:<br></br>
+new_schedule = time_task_was_supposed_to_start + scheduling_interval</p>
+<p>
+The scheduler internally holds a queue of tasks sorted in ascending order
+according to their next execution time. A task is removed from the queue
+if it is cancelled, i.e. if <tt>TimeScheduler.Task.isCancelled()</tt>
+returns true.
+</p>
+<p>
+Initially, the scheduler is in <tt>SUSPEND</tt>ed mode, <tt>start()</tt>
+need not be called: if a task is added, the scheduler gets started
+automatically. Calling <tt>start()</tt> starts the scheduler if it's
+suspended or stopped else has no effect. Once <tt>stop()</tt> is called,
+added tasks will not restart it: <tt>start()</tt> has to be called to
+restart the scheduler.
+</p>
+<P>
+</DIV>
+</BODY>
+</HTML>
