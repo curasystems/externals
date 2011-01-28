@@ -1,1 +1,0 @@
-..\..\tools\download mongodb-win32-x86_64-1.7.4 http://fastdl.mongodb.org/win32/
