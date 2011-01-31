@@ -22,3 +22,6 @@
 [submodule "apps/mongodb-csharp-driver"]
 	path = apps/mongodb-csharp-driver
 	url = https://github.com/mongodb/mongo-csharp-driver.git
+[submodule "libs\\httpmachine"]
+	path = libs\\httpmachine
+	url = https://github.com/bvanderveen/httpmachine.git
