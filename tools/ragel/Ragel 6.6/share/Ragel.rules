@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioToolFile
+	Name="Ragel Generator"
+	Version="8,00"
+	>
+	<Rules>
+		<CustomBuildRule
+			Name="RagelGenerator"
+			DisplayName="Ragel Generator"
+			CommandLine="ragel.exe [AllOptions] [AdditionalOptions] [Inputs]"
+			Outputs="$(InputName).cpp $(InputName).dot"
+			FileExtensions="*.rl"
+			ExecutionDescription="Generating regular expression state machine . . ."
+			>
+			<Properties>
+				<BooleanProperty
+					Name="Help"
+					DisplayName="Help"
+					Category="General"
+					Description="Print some usage information and exit."
+					HelpURL="http://www.cs.queensu.ca/~thurston/ragel/"
+					Switch="-h"
+				/>
+				<BooleanProperty
+					Name="Version"
+					DisplayName="Print Version"
+					Category="General"
+					Description="Print version information and exit."
+					Switch="-v"
+				/>
+				<BooleanProperty
+					Name="Statistics"
+					DisplayName="Print Statistics"
+					Category="General"
+					Description="Print some statistics."
+					Switch="-s"
+				/>
+				<StringProperty
+					Name="Output"
+					DisplayName="Output File"
+					Category="General"
+					Description="Write output to a file."
+					Switch="-o [value]"
+					DefaultValue="$(InputName).cpp"
+				/>
+				<EnumProperty
+					Name="FSMMinimization"
+					DisplayName="FSM Minimization"
+					Category="Minimization"
+					Description="Reduce the number of states in machines by merging equivalent states."
+					DefaultValue="2"
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							Switch="-n"
+							DisplayName="No Minimization"
+						/>
+						<EnumValue
+							Value="1"
+							Switch="-m"
+							DisplayName="Minimize at the end"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-l"
+							DisplayName="Minimize after most operations"
+						/>
+						<EnumValue
+							Value="3"
+							Switch="-e"
+							DisplayName="Minize after every operation"
+						/>
+					</Values>
+				</EnumProperty>
+				<BooleanProperty
+					Name="EmitXML"
+					DisplayName="Emit XML"
+					Category="Visualization"
+					Description="Run the frontend to emit XML intermediate format and exit."
+					Switch="-x"
+				/>
+				<BooleanProperty
+					Name="Graphviz"
+					DisplayName="Graphviz Output"
+					Category="Visualization"
+					Description="Generate an input file for Graphviz."
+					Switch="-V"
+				/>
+				<BooleanProperty
+					Name="Printable"
+					DisplayName="Display Printable Characters"
+					Category="Visualization"
+					Description="Display printable characters on labels (Graphviz output)."
+					Switch="-p"
+				/>
+				<EnumProperty
+					Name="Language"
+					DisplayName="Host Language"
+					Category="Host Language"
+					Description="Select the language of the target."
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							Switch="-C"
+							DisplayName="C, C++, Obj-C, or Obj-C++"
+						/>
+						<EnumValue
+							Value="1"
+							Switch="-D"
+							DisplayName="Walter Bright&apos;s D"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-J"
+							DisplayName="Java"
+						/>
+						<EnumValue
+							Value="3"
+							Switch="-R"
+							DisplayName="Ruby"
+						/>
+					</Values>
+				</EnumProperty>
+				<BooleanProperty
+					Name="NoLineDirectives"
+					DisplayName="No #line directives"
+					Category="Host Language"
+					Description="Do not pepper the output with #line directives (C and D)."
+					Switch="-L"
+				/>
+				<EnumProperty
+					Name="CodeStyle"
+					DisplayName="Code Style"
+					Category="Style"
+					Description="Select a code style. Code styles affect the size and speed of the compiled binary."
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							Switch="-T0"
+							DisplayName="Table driven FSM (C and Ruby)"
+						/>
+						<EnumValue
+							Value="1"
+							Switch="-T1"
+							DisplayName="Faster table driven FSM (C and Ruby)"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-F0"
+							DisplayName="Flat table driven FSM (C and Ruby)"
+						/>
+						<EnumValue
+							Value="3"
+							Switch="-F1"
+							DisplayName="Faster flat table driven FSM (C and Ruby)"
+						/>
+						<EnumValue
+							Value="4"
+							Switch="-G0"
+							DisplayName="Goto-driven FSM"
+						/>
+						<EnumValue
+							Value="5"
+							Switch="-G1"
+							DisplayName="Faster goto-driven FSM"
+						/>
+						<EnumValue
+							Value="6"
+							Switch="-G2"
+							DisplayName="Even faster goto-driven FSM"
+						/>
+						<EnumValue
+							Value="7"
+							Switch="-P1"
+							DisplayName="1-Way Split really fast goto-driven FSM."
+						/>
+						<EnumValue
+							Value="8"
+							Switch="-P2"
+							DisplayName="2-Way Split really fast goto-driven FSM."
+						/>
+						<EnumValue
+							Value="9"
+							Switch="-P3"
+							DisplayName="3-Way Split really fast goto-driven FSM."
+						/>
+						<EnumValue
+							Value="10"
+							Switch="-P4"
+							DisplayName="4-Way Split really fast goto-driven FSM."
+						/>
+						<EnumValue
+							Value="11"
+							Switch="-P8"
+							DisplayName="8-Way Split really fast goto-driven FSM."
+						/>
+						<EnumValue
+							Value="12"
+							DisplayName="&lt;not specified&gt;"
+						/>
+					</Values>
+				</EnumProperty>
+			</Properties>
+		</CustomBuildRule>
+		<CustomBuildRule
+			Name="DotGenerator"
+			DisplayName="Dot Generator"
+			CommandLine="dot.exe [AllOptions] [AdditionalOptions] [Inputs]"
+			Outputs="$(InputName).ps2"
+			FileExtensions="*.dot"
+			ExecutionDescription="Drawing directed graphs as hierachies . . ."
+			>
+			<Properties>
+				<EnumProperty
+					Name="OutputFormat"
+					DisplayName="Output Format"
+					Category="General"
+					Description="Sets the format of the output"
+					DefaultValue="9"
+					>
+					<Values>
+						<EnumValue
+							Value="0"
+							Switch="-Tcanon"
+							DisplayName="Prettyprint input (no layout)"
+						/>
+						<EnumValue
+							Value="1"
+							Switch="-Tdot"
+							DisplayName="Attributed DOT"
+						/>
+						<EnumValue
+							Value="2"
+							Switch="-Tfig"
+							DisplayName="FIG output"
+						/>
+						<EnumValue
+							Value="3"
+							Switch="-Tmp"
+							DisplayName="MetaPost output"
+						/>
+						<EnumValue
+							Value="4"
+							Switch="-Tpcl"
+							DisplayName="PCL-5 output for HP laser writers"
+						/>
+						<EnumValue
+							Value="5"
+							Switch="-Tpic"
+							DisplayName="PIC output"
+						/>
+						<EnumValue
+							Value="6"
+							Switch="-Tplain"
+							DisplayName="Simple, line based ASCII output"
+						/>
+						<EnumValue
+							Value="7"
+							Switch="-Tpng"
+							DisplayName="PNG (Portable Network Graphics) output"
+						/>
+						<EnumValue
+							Value="8"
+							Switch="-Tps"
+							DisplayName="PostScript (EPSF) output"
+						/>
+						<EnumValue
+							Value="9"
+							Switch="-Tps2"
+							DisplayName="PostScript (EPSF) output with PDF annotations"
+						/>
+						<EnumValue
+							Value="10"
+							Switch="-Tsvg"
+							DisplayName="SVG output"
+						/>
+						<EnumValue
+							Value="11"
+							Switch="-Tvtx"
+							DisplayName="VTX format for Visual Thought"
+						/>
+						<EnumValue
+							Value="12"
+							Switch="-Twbmp"
+							DisplayName="Wireless (WBMP) format"
+						/>
+					</Values>
+				</EnumProperty>
+				<StringProperty
+					Name="OutputFile"
+					DisplayName="Output File"
+					Description="The name of the output file"
+					Switch="-o[value]"
+					DefaultValue="$(InputName).ps2"
+				/>
+				<BooleanProperty
+					Name="Verbose"
+					DisplayName="Verbose"
+					Category="General"
+					Description="Request verbose output"
+					Switch="-v"
+				/>
+				<BooleanProperty
+					Name="Version"
+					DisplayName="Version"
+					Description="Print the version number and exit."
+					Switch="-V"
+				/>
+			</Properties>
+		</CustomBuildRule>
+		<CustomBuildRule
+			Name="PDFGenerator"
+			DisplayName="PS2PDF"
+			CommandLine="ps2pdf.bat $(InputName).ps2 $(InputName).pdf"
+			Outputs="$(InputName).pdf"
+			FileExtensions="*.ps2"
+			ExecutionDescription="Generating PDF output . . ."
+			>
+			<Properties>
+			</Properties>
+		</CustomBuildRule>
+	</Rules>
+</VisualStudioToolFile>
