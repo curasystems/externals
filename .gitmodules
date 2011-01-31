@@ -25,3 +25,6 @@
 [submodule "libs\\httpmachine"]
 	path = libs\\httpmachine
 	url = https://github.com/bvanderveen/httpmachine.git
+[submodule "frameworks/LinFu"]
+	path = frameworks/LinFu
+	url = https://github.com/philiplaureano/LinFu.git
