@@ -28,3 +28,9 @@
 [submodule "frameworks/LinFu"]
 	path = frameworks/LinFu
 	url = https://github.com/philiplaureano/LinFu.git
+[submodule "libs/eventstore"]
+	path = libs/eventstore
+	url = https://github.com/joliver/EventStore.git
+[submodule "tools/machine.specifications"]
+	path = tools/machine.specifications
+	url = https://github.com/machine/machine.specifications.git
