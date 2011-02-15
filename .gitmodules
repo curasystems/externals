@@ -22,8 +22,8 @@
 [submodule "apps/mongodb-csharp-driver"]
 	path = apps/mongodb-csharp-driver
 	url = https://github.com/mongodb/mongo-csharp-driver.git
-[submodule "libs\\httpmachine"]
-	path = libs\\httpmachine
+[submodule "libs/httpmachine"]
+	path = libs/httpmachine
 	url = https://github.com/bvanderveen/httpmachine.git
 [submodule "frameworks/LinFu"]
 	path = frameworks/LinFu
@@ -34,3 +34,9 @@
 [submodule "tools/machine.specifications"]
 	path = tools/machine.specifications
 	url = https://github.com/machine/machine.specifications.git
+[submodule "tools/cloud9"]
+	path = tools/cloud9
+	url = https://github.com/ajaxorg/cloud9.git
+[submodule "libs/rcd.mdcm"]
+	path = libs/rcd.mdcm
+	url = https://github.com/rcd/mdcm.git
