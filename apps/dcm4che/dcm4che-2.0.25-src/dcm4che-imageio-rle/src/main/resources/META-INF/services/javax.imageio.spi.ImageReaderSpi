@@ -1,0 +1,5 @@
+# $Id: javax.imageio.spi.ImageReaderSpi 569 2006-05-15 10:21:26Z gunterze $
+#
+# --- JAI-Image I/O ImageReader plug-ins ---
+#
+org.dcm4che2.imageioimpl.plugins.rle.RLEImageReaderSpi

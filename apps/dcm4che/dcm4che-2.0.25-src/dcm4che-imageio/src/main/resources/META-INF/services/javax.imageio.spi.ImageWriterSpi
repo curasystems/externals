@@ -1,0 +1,5 @@
+# $Id$
+#
+# --- JAI-Image I/O ImageWriter plug-ins ---
+#
+org.dcm4che2.imageioimpl.plugins.dcm.DicomImageWriterSpi

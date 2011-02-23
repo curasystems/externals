@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dicom>
+<attr tag="00570010" vr="LO" len="16">VEPRO BROKER 1.0</attr>
+<attr tag="00571010" vr="SQ" len="-1">
+<item off="13052" len="-1">
+<attr tag="00570010" vr="LO" len="30">VEPRO BROKER 1.0 DATA REPLACE</attr>
+<attr tag="00571020" vr="SQ" len="-1">
+<item off="13110" len="-1">
+<attr tag="00100020" vr="LO" len="0"/>
+</item>
+</attr>
+<attr tag="00571030" vr="SQ" len="-1">
+<item off="13154" len="-1">
+<attr tag="00100020" vr="LO" len="24">NOID1431920080528182346</attr>
+</item>
+</attr>
+<attr tag="00571040" vr="DA" len="8">20080528</attr>
+<attr tag="00571041" vr="TM" len="6">182346</attr>
+<attr tag="00571042" vr="SH" len="12">Filter_CT_4</attr>
+<attr tag="00571043" vr="SH" len="8">VCONTROL</attr>
+<attr tag="00571044" vr="SH" len="6">mednt3</attr>
+</item>
+</attr>
+</dicom>

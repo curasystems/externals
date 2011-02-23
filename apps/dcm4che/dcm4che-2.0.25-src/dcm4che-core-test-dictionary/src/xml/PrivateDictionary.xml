@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary tagclass="your.PrivateTag" creator="dcm4che2">
+<element tag="0099xx00" alias="PrivateUS" vr="US" vm="1">Private US</element>
+<element tag="0099xx10" alias="PrivateUL" vr="UL" vm="1">Private UL</element>
+<element tag="0099xxE0" alias="PrivateOB" vr="OB" vm="1">Private OB</element>
+</dictionary>

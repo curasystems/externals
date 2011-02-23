@@ -1,0 +1,31 @@
+<assembly>
+  <id>src</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+        <include>dcm4che-audit/**</include>
+        <include>dcm4che-base64/**</include>
+        <include>dcm4che-core/**</include>
+        <include>dcm4che-core-test-dictionary/**</include>
+        <include>dcm4che-filecache/**</include>
+        <include>dcm4che-hp/**</include>
+        <include>dcm4che-image/**</include>
+        <include>dcm4che-imageio/**</include>
+        <include>dcm4che-imageio-rle/**</include>
+        <include>dcm4che-iod/**</include>
+        <include>dcm4che-net/**</include>
+        <include>dcm4che-soundex/**</include>
+        <include>dcm4che-tool/**</include>
+        <include>pom.xml</include>
+        <include>src/**</include>
+      </includes>
+      <excludes>
+        <exclude>**/target/**</exclude>
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

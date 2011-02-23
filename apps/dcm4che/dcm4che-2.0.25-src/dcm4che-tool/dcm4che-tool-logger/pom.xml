@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dcm4che-tool</artifactId>
+        <groupId>dcm4che.tool</groupId>
+        <version>2.0.25</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dcm4che.tool</groupId>
+    <artifactId>dcm4che-tool-logger</artifactId>
+    <version>2.0.25</version>
+    <packaging>jar</packaging>
+    <name>dcm4che-tool-logger</name>
+    <description>Logger</description>
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>dcm4che</groupId>
+            <artifactId>dcm4che-audit</artifactId>
+            <version>2.0.25</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

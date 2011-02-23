@@ -43,3 +43,6 @@
 [submodule "libs/servicestack"]
 	path = libs/servicestack
 	url = https://github.com/ServiceStack/ServiceStack.git
+[submodule "tools/sqlite-commander"]
+	path = tools/sqlite-commander
+	url = https://github.com/curiosity/sqlite-commander.git
