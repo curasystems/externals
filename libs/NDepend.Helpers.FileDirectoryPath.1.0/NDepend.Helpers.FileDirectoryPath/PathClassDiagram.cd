@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="NDepend.Helpers.FileDirectoryPath.BasePath" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BasePath.cs</FileName>
+      <HashCode>IABABAAgAAAAAAIAoIAAAAAAAAAAAIACAAAAABggAiA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.DirectoryPath" Collapsed="true">
+    <Position X="1" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DirectoryPath.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.FilePath" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FilePath.cs</FileName>
+      <HashCode>AAAABAAAAAAAAACAAAAgAAAAAAAAAAAAAAEAABBAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.DirectoryPathAbsolute" Collapsed="true">
+    <Position X="3.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>DirectoryPathAbsolute.cs</FileName>
+      <HashCode>IAgQQAEAQAAAAAAAIQIAAAAEABAAkCAAAAAAAAkAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.DirectoryPathRelative" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>DirectoryPathRelative.cs</FileName>
+      <HashCode>IAAAAAEgQAAAAAgAIAIAAAAAABAAECAAAAAAAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.FilePathAbsolute" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>FilePathAbsolute.cs</FileName>
+      <HashCode>IQAAQAAAQAAAAAAAIAIAAAAEABAAkAAAAEAAAAkAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NDepend.Helpers.FileDirectoryPath.FilePathRelative" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>FilePathRelative.cs</FileName>
+      <HashCode>IQAAAAAgQAAAAAgAIAIAAAAAABAAEAAAAAAAAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>
