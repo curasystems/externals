@@ -46,3 +46,6 @@
 [submodule "tools/sqlite-commander"]
 	path = tools/sqlite-commander
 	url = https://github.com/curiosity/sqlite-commander.git
+[submodule "libs/zeromq2-zguide"]
+	path = libs/zeromq2-zguide
+	url = https://github.com/imatix/zguide.git
